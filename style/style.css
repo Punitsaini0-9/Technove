@@ -911,27 +911,26 @@ body {
 
 .footer {
     width: 100%;
+    height: auto;
     background: #081C15;
-    /* Dark background color */
     color: #e2e8f0;
-    /* Light text color */
     position: relative;
-    padding: 1rem 2rem;
-    overflow: hidden;
+    /* padding: 1rem 2rem; */
+    /* overflow: hidden; */
 }
 
-.footer::before {
+.footer::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://placehold.co/1400x800/1a202c/e2e8f0?text=World+Map');
+    background-image: url('/assets/imgaes/maps.png');
     /* Placeholder for map image */
     background-size: cover;
     background-position: center;
-    opacity: 0.1;
+    opacity: 1;
     z-index: 1;
 }
 
@@ -942,6 +941,8 @@ body {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 3rem;
 }
 
@@ -964,27 +965,26 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
 .logo-section img {
     width: 80px;
     height: 80px;
-    margin-bottom: 1rem;
 }
 
-.follow{
+.follow {
     font-size: 0.8rem;
-    color: #FFF;
+    color: #FFFFFF;
     display: flex;
     align-items: center;
     gap: 10px;
     font-weight: 900;
 }
 
-.follow img{
+.follow img {
     width: 20px;
     height: 20px;
-    margin-top: 15px;
 }
 
 .tagline {
@@ -992,27 +992,23 @@ body {
     font-weight: 700;
     line-height: 1.3;
     color: #ffffff;
-    /* margin-bottom: 0.5rem; */
 }
 
 .footer-description {
     font-size: 0.9rem;
     color: #a0aec0;
     max-width: 400px;
-    margin: 0 auto 1rem;
 }
 
 .social-media {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    /* margin-top: 1rem; */
 }
 
 .social-media a {
     color: #ffffff;
     font-size: 1.5rem;
-    transition: color 0.2s ease;
 }
 
 .social-media a img {
@@ -1022,33 +1018,39 @@ body {
     object-fit: contain;
 }
 
-.social-media a:hover {
-    color: #4299e1;
-    /* Blue on hover */
-}
-
 .column h3 {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 700;
+    width: 200px;
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    margin-top: 3rem;
     margin-bottom: 1rem;
+}
+
+.column h3 img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
 }
 
 .column p,
 .column a {
     color: #a0aec0;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-.column a:hover {
+.column a:hover{
     color: #ffffff;
+    transform: translateX(10px);
 }
+
+
 
 .address {
     margin: 0 auto;
@@ -1064,15 +1066,18 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-list li a:hover {
+    color: #ffffff;
+    transform: translateX(10px);
 }
 
 .copyright {
-    text-align: center;
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(226, 232, 240, 0.2);
     color: #a0aec0;
     font-size: 0.875rem;
+    padding-bottom: 20px;
 }
 
 /* Responsive adjustments */
@@ -1110,7 +1115,7 @@ body {
 
     /* lg breakpoint */
     .footer {
-        padding: 6rem 4rem 2rem;
+        padding: 2rem 4rem 0rem;
     }
 
     .main-columns {
