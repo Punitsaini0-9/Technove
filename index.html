@@ -415,6 +415,127 @@
         </div>
     </section>
 
+    <section class="testimonial">
+        <h1>Clients <span class="highlight">Testimonial</span></h1>
+        <p>What clients say about my services</p>
+
+
+        <div class="testimonial-section">
+
+            <div class="nav-line">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+
+            <div class="testimonial-slider">
+                <div class="testimonial-cards" id="cards">
+                    <!-- Set 1 -->
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Neeraj Bhatra</div>
+                            <div class="location">Delhi, India</div>
+                            <p> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
+                                duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat
+                                incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Neeraj Bhatra</div>
+                            <div class="location">Mumbai, India</div>
+                            <p> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
+                                duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat
+                                incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
+                        </div>
+                    </div>
+
+                    <!-- Set 2 -->
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Neeraj Bhatra</div>
+                            <div class="location">Bangalore, India</div>
+                            <p> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
+                                duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat
+                                incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Neeraj Bhatra</div>
+                            <div class="location">Hyderabad, India</div>
+                            <p> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
+                                duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat
+                                incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
+                        </div>
+                    </div>
+
+                    <!-- Set 3 -->
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Neeraj Bhatra</div>
+                            <div class="location">Chennai, India</div>
+                            <p> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
+                                duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat
+                                incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Neeraj Bhatra</div>
+                            <div class="location">Pune, India</div>
+                            <p> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
+                                duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat
+                                incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
+                        </div>
+                    </div>
+
+                    <!-- Set 4 -->
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Neeraj Bhatra</div>
+                            <div class="location">Chennai, India</div>
+                            <p> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
+                                duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat
+                                incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Neeraj Bhatra</div>
+                            <div class="location">Pune, India</div>
+                            <p> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
+                                duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat
+                                incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const cards = document.getElementById("cards");
+        const dots = document.querySelectorAll(".dot");
+
+        let index = 0;
+        const totalSlides = dots.length;
+
+        function showSlide(i) {
+            cards.style.transform = `translateX(-${i * 100}%)`;
+            dots.forEach(dot => dot.classList.remove("active"));
+            dots[i].classList.add("active");
+        }
+
+        // Auto slide
+        setInterval(() => {
+            index = (index + 1) % totalSlides;
+            showSlide(index);
+        }, 4000); // every 4 seconds
+
+        // Click on dot to change slide
+        dots.forEach((dot, i) => {
+            dot.addEventListener("click", () => {
+                index = i;
+                showSlide(i);
+            });
+        });
+    </script>
+
+
     <section class="trans-section">
         <img class="trans-left-top" src="/assets/imgaes/shape-3 1 (1).png" alt="">
 
@@ -470,7 +591,7 @@
             </div>
 
             <!-- Technology Item 7: WordPress -->
-            <div class="tech-item" >
+            <div class="tech-item">
                 <img style="width: 100px;" src="/assets/imgaes/download 2.png" alt="WordPress Logo">
             </div>
 
@@ -488,15 +609,17 @@
                 <div class="column logo-section">
                     <img src="/assets/imgaes/logo 1.png" alt="Company Logo">
                     <h2 class="tagline">Empowering Innovation, Driving Digital Success.</h2>
-                    <p class="footer-description">Technove Global Software Pvt. Ltd. believes that innovation is a journey, not a destination</p>
-                    <p style="color: #FFFFFF;" class="follow"> <img src="/assets/icons/solar_share-linear.png" alt="">Follow us on -</p>
+                    <p class="footer-description">Technove Global Software Pvt. Ltd. believes that innovation is a
+                        journey, not a destination</p>
+                    <p style="color: #FFFFFF;" class="follow"> <img src="/assets/icons/solar_share-linear.png"
+                            alt="">Follow us on -</p>
                     <div class="social-media">
                         <a href="#" class="instagram"><img src="/assets/icons/skill-icons_instagram.png" alt=""></a>
                         <a href="#" class="facebook"><img src="/assets/icons/Vector.png" alt=""></a>
                         <a href="#" class="youtube"><img src="/assets/icons/logos_youtube-icon.png" alt=""></a>
                     </div>
                 </div>
-                
+
                 <!-- Column 2: House of Operation -->
                 <div class="column">
                     <h3><img src="/assets/icons/location_on.png" alt=""> House of Operation</h3>
@@ -505,7 +628,7 @@
                         Uttar Pradesh - 201301, India.
                     </p>
                 </div>
-                
+
                 <!-- Column 3: Services -->
                 <div class="column">
                     <h3><img src="/assets/icons/grommet-icons_services.png" alt=""> Services</h3>
@@ -518,7 +641,7 @@
                         <li><a href="#">Smart Key <i class="fa-solid fa-angle-down"></i></a></li>
                     </ul>
                 </div>
-                
+
                 <!-- Column 4: Company -->
                 <div class="column">
                     <h3><img src="/assets/icons/mdi_company.png" alt=""> Company</h3>
@@ -530,7 +653,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <p class="copyright">&copy; Copyright 2024-2025 Technove.pvt.ltd</p>
         </div>
     </footer>

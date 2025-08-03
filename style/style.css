@@ -966,11 +966,13 @@ body {
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
+    text-align: left;
 }
 
 .logo-section img {
     width: 80px;
     height: 80px;
+    margin-left: 10px;
 }
 
 .follow {
@@ -980,6 +982,8 @@ body {
     align-items: center;
     gap: 10px;
     font-weight: 900;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 .follow img {
@@ -992,12 +996,15 @@ body {
     font-weight: 700;
     line-height: 1.3;
     color: #ffffff;
+    margin-left: 10px;
 }
 
 .footer-description {
     font-size: 0.9rem;
     color: #a0aec0;
     max-width: 400px;
+    text-align: left;
+    
 }
 
 .social-media {
@@ -1025,13 +1032,13 @@ body {
     color: #ffffff;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
     gap: 0.5rem;
     margin-top: 3rem;
     margin-bottom: 1rem;
 }
 
-.column h3 img{
+.column h3 img {
     width: 30px;
     height: 30px;
     object-fit: contain;
@@ -1040,12 +1047,12 @@ body {
 .column p,
 .column a {
     color: #a0aec0;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-.column a:hover{
+.column a:hover {
     color: #ffffff;
     transform: translateX(10px);
 }
@@ -1053,9 +1060,10 @@ body {
 
 
 .address {
-    margin: 0 auto;
+    /* margin: 0 auto; */
     max-width: 250px;
     line-height: 1.6;
+    text-align: left;
 }
 
 .service-list,
@@ -1065,7 +1073,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.9rem;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -1120,5 +1128,162 @@ body {
 
     .main-columns {
         gap: 4rem;
+    }
+}
+
+.testimonial {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 40px;
+    background-color: #fff;
+
+}
+
+.testimonial h1,
+p {
+    text-align: center;
+    padding: 10px;
+    font-size: 2.5rem;
+}
+
+.testimonial p {
+    margin-bottom: 20px;
+    font-family: "Cormorant SC";
+    font-style: italic;
+    font-size: 2rem;
+}
+
+.testimonial-section {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.nav-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: auto 50px;
+}
+
+.dot {
+    width: 6px;
+    height: 20px;
+    border-radius: 10px;
+    background: #3DFEFF;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #33D3D4;
+    width: 6px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.testimonial-slider {
+    overflow: hidden;
+    width: 100%;
+}
+
+.testimonial-cards {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card-wrapper {
+    display: flex;
+    gap: 20px;
+    min-width: 100%;
+}
+
+.testimonial-card {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px 25px 0;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-card .person-name {
+    font-size: 1.5rem;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.location {
+    font-size: 1rem;
+    color: #000;
+    margin: 10px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.location::before {
+    content: url("/assets/icons/Group (1).png");
+    margin-bottom: 10px;
+    margin-right: 25px;
+    width: 10px;
+    height: 10px;
+}
+
+
+.testimonial-card p {
+    font-size: 1rem;
+    color: #444;
+    font-style: italic;
+    line-height: 1.5;
+    text-align: justify;
+    position: relative;
+
+}
+
+.testimonial-card p::before {
+    content: "“";
+    font-size: 2rem;
+    position: absolute;
+    left: -15px;
+    top: 5px;
+    color: #222;
+}
+
+.testimonial-card p::after {
+    content: "”";
+    position: absolute;
+    bottom: -10%;
+    font-size: 2rem;
+    color: #222;
+}
+
+@media (max-width: 768px) {
+    .card-wrapper {
+        flex-direction: column;
+    }
+
+    .testimonial-card {
+        min-width: 100%;
+    }
+
+    .testimonial-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-line {
+        flex-direction: row;
+        margin-bottom: 20px;
+    }
+
+    .dot {
+        height: 6px;
+        width: 40px;
+    }
+
+    .dot.active {
+        height: 8px;
     }
 }
