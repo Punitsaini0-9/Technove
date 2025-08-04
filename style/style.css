@@ -1428,7 +1428,6 @@ body {
     align-items: center;
     gap: 0.5rem;
     color: #4299e1;
-    /* Blue link color */
     font-weight: 600;
     text-decoration: none;
     transition: color 0.2s ease;
@@ -1436,7 +1435,6 @@ body {
 
 .learn-more-link:hover {
     color: #3182ce;
-    /* Darker blue on hover */
 }
 
 /* Responsive adjustments */
@@ -1602,7 +1600,6 @@ body {
 @media (min-width: 768px) {
     .industries-section {
         flex-direction: row;
-        /* side by side */
         padding: 60px 80px;
     }
 
@@ -1780,13 +1777,13 @@ body {
 }
 
 .section-header h2 span {
-    color: #ef4444; /* Red highlight */
+    color: #ef4444;
 }
 
-/* Grid layout - mobile first */
+
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns by default */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     justify-items: center;
 }
