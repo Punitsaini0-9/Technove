@@ -8,13 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-
     <link rel="stylesheet" href="./style/style.css">
-    <Script src="/assets/animation/animation.js"></Script>
-
+    <Script src="/assets/animation/animation.js"></Script> -->
 </head>
 
 <body>
@@ -149,7 +147,7 @@
     </section>
 
     <section class="why-choose-section">
-        <h1 class="why-heading">Why <span class="highlight">Choose Us</span></h1>
+        <h1 class="why-heading fade-in">Why <span class="highlight">Choose Us</span></h1>
         <div class="why-container">
             <div class="why-content">
                 <p>We know, every company says they’re “innovative”, “dynamic”, and “like a family”. We won’t bore you
@@ -282,7 +280,8 @@
             const prevBtn = document.querySelector(".slide-btn.prev");
             const nextBtn = document.querySelector(".slide-btn.next");
 
-            const cardsPerSlide = 2;
+            let cardsPerSlide = window.innerWidth <= 768 ? 1 : 2;
+
             let currentIndex = 0;
             let isDragging = false;
             let startX = 0;
@@ -356,14 +355,14 @@
     <section class="export-section">
         <div class="export-left">
             <div class="exp">
-                <h1>2+Years</h1>
-                <h5> Experience</h5>
+                <h1 class="fade-in">2+Years</h1>
+                <h5 class="fade-in"> Experience</h5>
             </div>
         </div>
 
         <div class="export-right">
-            <h1 class="export-main-heading">CORE OFFERINGS</h1>
-            <h1 class="highlight">Explore our expertise</h1>
+            <h1 class="export-main-heading fade-in">CORE OFFERINGS</h1>
+            <h1 class="highlight exp-sub-heading fade-in">Explore our expertise</h1>
 
             <div class="cards-container">
                 <div class="cards-grid">
@@ -387,7 +386,8 @@
                     <!-- Card 2: Smart Key -->
                     <div class="card card-2">
                         <div class="card-image-wrapper">
-                            <img src="/assets/imgaes/sks 1.png" alt="Smart Key">
+                            <img style="object-position: 10% 10%"
+                                src="/assets/imgaes/ChatGPT Image Aug 5, 2025, 12_05_00 AM.png" alt="Smart Key">
                         </div>
                         <div class="card-content">
                             <h2 class="card-heading">Smart Key</h2>
@@ -444,14 +444,14 @@
     <section class="brand-section">
 
 
+        <div class="top-left-img">
+            <img style="width: 250px;" src="/assets/imgaes/download 4.png" alt="">
+        </div>
         <div class="brand-content-wrapper">
-            <div class="top-left img">
-                <img style="width: 200px;" src="/assets/imgaes/download 4.png" alt="">
-            </div>
 
             <div class="brand-content">
-
-                <h1><span class="highlight">Grow</span> you brand <span class="highlight">with</span> us</h1>
+                <h1 class="fade-left"><span class="highlight">Grow</span> you brand <span class="highlight">with</span>
+                    us</h1>
                 <h5>Inspired by what you see? Let’s talk</h5>
                 <p>We collaborate with brands to create impactful, meaningful solutions tailored to your goals. From
                     strategy to execution, we focus on innovation, storytelling, and design that drives engagement
@@ -470,8 +470,9 @@
     <div class="solution-section-container">
         <div class="section-header">
             <h2 class="main-heading">OUR <span class="highlight">SOLUTION</span></h2>
-            <h3 class="sub-heading">Explore Our IT Services</h3>
+            <h3 class="sub-heading ">Explore Our IT Services</h3>
         </div>
+
 
         <div class="services-grid">
             <!-- Card 1: App Development -->
@@ -509,7 +510,7 @@
                 <div class="service-icon-wrapper">
                     <img src="/assets/icons/streamline-freehand-color_graphic-tablet-draw-1 (1).png" alt="">
                 </div>
-                <h4 class="card-title">Graphic Design</h4>
+                <h4 class="card-title">UI/UX Design</h4>
                 <p class="card-description">
                     Transform your brand identity with our creative visual designs, delivering eye-catching graphics for
                     every need.
@@ -537,7 +538,9 @@
             <!-- Card 5: E-commerce -->
             <div class="service-card">
                 <div class="service-icon-wrapper">
-                    <img src="/assets/icons/carbon_vehicle-api.png" alt="">
+                    <img style="width: 150px;"
+                        src="assets/icons/image-removebg-preview.png"
+                        alt="">
                 </div>
                 <h4 class="card-title">E-commerce</h4>
                 <p class="card-description">
@@ -567,13 +570,14 @@
     </div>
 
     <section class="industries-section">
-        <div class="industries-content-wrapper">
+        <div class="indusstries-content-wrapper">
             <div class="industries-content">
                 <h3>INDUSTRIES WE WORK FOR</h3>
                 <h1>Helping <span class="highlight">Businesses</span> in All
                     Domains</h1>
             </div>
         </div>
+
         <div class="industries-cards">
             <div class="grid-container">
                 <div class="icon-grid">
@@ -625,118 +629,435 @@
 
         <div class="testimonial-section">
 
-            <div class="nav-line">
-                <div class="dot active"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </div>
-
             <div class="testimonial-slider">
                 <div class="testimonial-cards" id="cards">
                     <!-- Set 1 -->
                     <div class="card-wrapper">
                         <div class="testimonial-card">
-                            <div class="person-name">Neeraj Bhatra</div>
-                            <div class="location">Delhi, India</div>
-                            <p> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
-                                duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat
-                                incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
+                            <div class="person-name">Saurabh Jain</div>
+                            <div class="location">Jaipur, Rajasthan</div>
+                            <p>“EMI Locker changed how I do mobile business. Simple and effective.”</p>
                         </div>
                         <div class="testimonial-card">
-                            <div class="person-name">Neeraj Bhatra</div>
-                            <div class="location">Mumbai, India</div>
-                            <p> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
-                                duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat
-                                incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
+                            <div class="person-name">Neha Sharma</div>
+                            <div class="location">New Delhi</div>
+                            <p>“The Eco scooty handles Delhi traffic surprisingly well.”</p>
                         </div>
                     </div>
 
-                    <!-- Set 2 -->
                     <div class="card-wrapper">
                         <div class="testimonial-card">
-                            <div class="person-name">Neeraj Bhatra</div>
-                            <div class="location">Bangalore, India</div>
-                            <p> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
-                                duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat
-                                incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
+                            <div class="person-name">Subrata Ghosh</div>
+                            <div class="location">Siliguri, West Bengal</div>
+                            <p>“We use Technove’s LED TV in our hotel rooms—guests love the quality.”</p>
                         </div>
                         <div class="testimonial-card">
-                            <div class="person-name">Neeraj Bhatra</div>
-                            <div class="location">Hyderabad, India</div>
-                            <p> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
-                                duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat
-                                incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
+                            <div class="person-name">Nitesh Dubey</div>
+                            <div class="location">Lucknow</div>
+                            <p>“Ab baar baar call nahi karna padta. Locker sab kar deta hai.”</p>
                         </div>
                     </div>
 
-                    <!-- Set 3 -->
                     <div class="card-wrapper">
                         <div class="testimonial-card">
-                            <div class="person-name">Neeraj Bhatra</div>
-                            <div class="location">Chennai, India</div>
-                            <p> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
-                                duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat
-                                incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
+                            <div class="person-name">Vinod Yadav</div>
+                            <div class="location">Bhopal</div>
+                            <p>“Eco scooty is affordable and perfect for college runs.”</p>
                         </div>
                         <div class="testimonial-card">
-                            <div class="person-name">Neeraj Bhatra</div>
-                            <div class="location">Pune, India</div>
-                            <p> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
-                                duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat
-                                incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
+                            <div class="person-name">Alka Verma</div>
+                            <div class="location">Kanpur</div>
+                            <p>“Charging once a week is enough for errands.”</p>
                         </div>
                     </div>
 
-                    <!-- Set 4 -->
                     <div class="card-wrapper">
                         <div class="testimonial-card">
-                            <div class="person-name">Neeraj Bhatra</div>
-                            <div class="location">Chennai, India</div>
-                            <p> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
-                                duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat
-                                incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
+                            <div class="person-name">Moumita Roy</div>
+                            <div class="location">Siliguri</div>
+                            <p>“Customer der upor ekta niyom ashe, on-time payment hoy.”</p>
                         </div>
                         <div class="testimonial-card">
-                            <div class="person-name">Neeraj Bhatra</div>
-                            <div class="location">Pune, India</div>
-                            <p> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur
-                                duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat
-                                incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
+                            <div class="person-name">Ankit Roy</div>
+                            <div class="location">Ranchi</div>
+                            <p>“Smart Key ne mobile business ko safe bana diya.”</p>
                         </div>
                     </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Mandeep Kaur</div>
+                            <div class="location">Amritsar</div>
+                            <p>“Great sound clarity and user-friendly remote.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Rajat Sinha</div>
+                            <div class="location">Patna</div>
+                            <p>“Very light and easy to handle for my wife.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Divya Gupta</div>
+                            <div class="location">Ghaziabad</div>
+                            <p>“Earlier I had to chase customers, now just one click.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Sanjay Pandey</div>
+                            <div class="location">Patna</div>
+                            <p>“Scooty ki battery bahut achhi chalti hai.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Snehal Shah</div>
+                            <div class="location">Ahmedabad</div>
+                            <p>“Kite looks stylish and handles sharp turns well.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Arindam Pal</div>
+                            <div class="location">Howrah</div>
+                            <p>“Er age boro tension chhilo, ekhon software sab kore dei.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Manoj Patel</div>
+                            <div class="location">Ahmedabad</div>
+                            <p>“Kite’s battery life is solid. No issues in 2 months.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Preeti Agarwal</div>
+                            <div class="location">Jaipur</div>
+                            <p>“Locker ne EMI buyers ko time pe payment sikha diya.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Rohit Menon</div>
+                            <div class="location">Kochi</div>
+                            <p>“Scooty rides smooth even on Kochi’s wet roads.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Anup Das</div>
+                            <div class="location">Guwahati</div>
+                            <p>“Locker system diye collection easy hoye gol.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Nishant Joshi</div>
+                            <div class="location">Udaipur</div>
+                            <p>“Smooth streaming even on slow WiFi.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Deepak Sharma</div>
+                            <div class="location">Meerut</div>
+                            <p>“Locker ne hamara vishwas wapas la diya.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Anjana Varghese</div>
+                            <div class="location">Kochi</div>
+                            <p>“Technove locker use cheyyumbo tension koravanu.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Pooja Desai</div>
+                            <div class="location">Vadodara</div>
+                            <p>“Lost less money in 6 months, thanks to EMI Locker.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Tanvi Mohanty</div>
+                            <div class="location">Bhubaneswar</div>
+                            <p>“Scooty is perfect for my daily office run.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Santosh Gowda</div>
+                            <div class="location">Mysuru</div>
+                            <p>“Locker nalli business protection ide.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Sanjay Mehra</div>
+                            <div class="location">Indore</div>
+                            <p>“Super lightweight TV, perfect for our hall.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Rakesh Kumar</div>
+                            <div class="location">Bhopal</div>
+                            <p>“Pehle EMI leke tension hoti thi, ab sab control mein hai.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Priya Desai</div>
+                            <div class="location">Nagpur</div>
+                            <p>“Eco scooty is light, silent and fun to ride.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Sonal Thakur</div>
+                            <div class="location">Gwalior</div>
+                            <p>“Locker se payment time pe aata hai, bada relief hai.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Rajeev Tiwari</div>
+                            <div class="location">Allahabad</div>
+                            <p>“LED TV ki screen aur sound dono amazing hai.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Parul Patel</div>
+                            <div class="location">Surat</div>
+                            <p>“Kharidi nathi badli, pan vishwas vadhi gayo.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Faizan Khan</div>
+                            <div class="location">Ujjain</div>
+                            <p>“With EMI Locker, I feel safer doing credit sales.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Reena Jain</div>
+                            <div class="location">Noida</div>
+                            <p>“Scooty battery kaafi din tak chalti hai.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Swapnil Kulkarni</div>
+                            <div class="location">Bengaluru</div>
+                            <p>“TV quality is premium and very affordable.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Zoya Khan</div>
+                            <div class="location">Hyderabad</div>
+                            <p>“Technove ka system meri dukan ka sahara hai.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Rahul Sinha</div>
+                            <div class="location">Jamshedpur</div>
+                            <p>“Locker ne EMI defaults ko almost zero kar diya.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Arvind Menon</div>
+                            <div class="location">Trichy</div>
+                            <p>“Scooty’s lightweight frame makes it easy to handle.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Sheetal Rao</div>
+                            <div class="location">Chennai</div>
+                            <p>“Great experience with LED TV, clear visuals.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Manjeet Kaur</div>
+                            <div class="location">Mohali</div>
+                            <p>“EMI Locker ne chhoti dukan ka business safe banaya.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Harshad K</div>
+                            <div class="location">Surat</div>
+                            <p>“EMI recovery itna smooth kabhi nahi tha.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Gaurav Patel</div>
+                            <div class="location">Nashik</div>
+                            <p>“Eco scooty ki battery bahut badiya hai.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Sagnik Sen</div>
+                            <div class="location">Durgapur</div>
+                            <p>“Locker er fole customer ra payment miss kore na.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Neeraj Batra</div>
+                            <div class="location">Chandigarh</div>
+                            <p>“Smart Key helps me stay in control of all sales.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Prathima Shetty</div>
+                            <div class="location">Bengaluru</div>
+                            <p>“Technove EMI Locker nalli peace ide.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Abhinav Das</div>
+                            <div class="location">Agartala</div>
+                            <p>“Battery charge last karta hai almost full week.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Hitesh Trivedi</div>
+                            <div class="location">Rajkot</div>
+                            <p>“Locker system thi paisa time pe male chhe.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Nilesh Pawar</div>
+                            <div class="location">Nashik</div>
+                            <p>“TV installed smoothly and works like a charm.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Karthik S</div>
+                            <div class="location">Coimbatore</div>
+                            <p>“EMI Locker use panna business nalla improve aaguthu.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Naveen Rao</div>
+                            <div class="location">Warangal</div>
+                            <p>“Locker helped recover 3 overdue payments last month.”</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="person-name">Jitendra Kumar</div>
+                            <div class="location">Raipur</div>
+                            <p>“Customer discipline improved drastically post locker.”</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="person-name">Tarun Nair</div>
+                            <div class="location">Thiruvananthapuram</div>
+                            <p>“EMI Locker is the best decision I made this year.”</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+
+            <div class="nav-line" id="nav-line"></div>
         </div>
+
+        <script>
+            const cards = document.getElementById("cards");
+            const wrappers = document.querySelectorAll(".card-wrapper");
+            const navLine = document.getElementById("nav-line");
+
+            let index = 0;
+            const totalSlides = wrappers.length;
+
+            // Generate dots dynamically
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement("div");
+                dot.classList.add("dot");
+                if (i === 0) dot.classList.add("active");
+                navLine.appendChild(dot);
+            }
+
+            const dots = document.querySelectorAll(".dot");
+
+            function showSlide(i) {
+                cards.style.transform = `translateX(-${i * 100}%)`;
+                dots.forEach(dot => dot.classList.remove("active"));
+                dots[i].classList.add("active");
+            }
+
+            // Auto slide
+            let interval = setInterval(() => {
+                index = (index + 1) % totalSlides;
+                showSlide(index);
+            }, 4000);
+
+            // Click on dot
+            dots.forEach((dot, i) => {
+                dot.addEventListener("click", () => {
+                    index = i;
+                    showSlide(i);
+                    resetInterval();
+                });
+            });
+
+            // Drag functionality
+            let isDown = false;
+            let startx, scrollleft;
+
+            cards.addEventListener("mousedown", (e) => {
+                isDown = true;
+                startX = e.pageX;
+            });
+
+            cards.addEventListener("mouseleave", () => {
+                isDown = false;
+            });
+
+            cards.addEventListener("mouseup", (e) => {
+                if (!isDown) return;
+                isDown = false;
+                const delta = e.pageX - startx;
+                if (delta > 50 && index > 0) index--;
+                else if (delta < -50 && index < totalSlides - 1) index++;
+                showSlide(index);
+                resetInterval();
+            });
+
+            function resetInterval() {
+                clearInterval(interval);
+                interval = setInterval(() => {
+                    index = (index + 1) % totalSlides;
+                    showSlide(index);
+                }, 4000);
+            }
+
+            // Optional: Touch support for mobile
+            cards.addEventListener("touchstart", handleTouchStart, false);
+            cards.addEventListener("touchend", handleTouchEnd, false);
+
+            let touchStartX = null;
+
+            function handleTouchStart(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }
+
+            function handleTouchEnd(e) {
+                if (touchStartX === null) return;
+                let touchEndX = e.changedTouches[0].screenX;
+                let diff = touchStartX - touchEndX;
+
+                if (diff > 50 && index < totalSlides - 1) index++;
+                else if (diff < -50 && index > 0) index--;
+                showSlide(index);
+                resetInterval();
+            }
+        </script>
+
     </section>
 
-    <script>
-        const cards = document.getElementById("cards");
-        const dots = document.querySelectorAll(".dot");
 
-        let index = 0;
-        const totalSlides = dots.length;
-
-        function showSlide(i) {
-            cards.style.transform = `translateX(-${i * 100}%)`;
-            dots.forEach(dot => dot.classList.remove("active"));
-            dots[i].classList.add("active");
-        }
-
-        // Auto slide
-        setInterval(() => {
-            index = (index + 1) % totalSlides;
-            showSlide(index);
-        }, 4000); // every 4 seconds
-
-        // Click on dot to change slide
-        dots.forEach((dot, i) => {
-            dot.addEventListener("click", () => {
-                index = i;
-                showSlide(i);
-            });
-        });
-    </script>
 
 
     <section class="trans-section">
@@ -785,7 +1106,7 @@
 
             <!-- Technology Item 5: CodeIgniter -->
             <div class="tech-item">
-                <img style="width: 100px;" src="/assets/imgaes/codeIgnitor 1.png" alt="CodeIgniter Logo">
+                <img src="/assets/imgaes/codeIgnitor 1.png" alt="CodeIgniter Logo">
             </div>
 
             <!-- Technology Item 6: Java -->
@@ -795,12 +1116,12 @@
 
             <!-- Technology Item 7: WordPress -->
             <div class="tech-item">
-                <img style="width: 100px;" src="/assets/imgaes/download 2.png" alt="WordPress Logo">
+                <img src="/assets/imgaes/download 2.png" alt="WordPress Logo">
             </div>
 
             <!-- Technology Item 8: HTML5/CSS3 -->
             <div class="tech-item">
-                <img style="width: 200px;" src="/assets/imgaes/download 3.png" alt="HTML5 Logo">
+                <img src="/assets/imgaes/download 3.png" alt="HTML5 Logo">
             </div>
         </div>
     </div>
@@ -838,7 +1159,7 @@
                     <ul class="service-list">
                         <li><a href="#">Web Development <i class="fa-solid fa-angle-down"></i></a></li>
                         <li><a href="#">SEO Marketing <i class="fa-solid fa-angle-down"></i></a></li>
-                        <li><a href="#">Graphic Design <i class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#">UI/UX Design <i class="fa-solid fa-angle-down"></i></a></li>
                         <li><a href="#">Electrical Vehicle <i class="fa-solid fa-angle-down"></i></a></li>
                         <li><a href="#">Smart Tv <i class="fa-solid fa-angle-down"></i></a></li>
                         <li><a href="#">Smart Key <i class="fa-solid fa-angle-down"></i></a></li>
@@ -860,6 +1181,12 @@
             <p class="copyright">&copy; Copyright 2024-2025 Technove.pvt.ltd</p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="./style/style.css">
+    <Script src="/assets/animation/animation.js"></Script>
 
 </body>
 
