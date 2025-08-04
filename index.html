@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
     <link rel="stylesheet" href="./style/style.css">
     <script>
         window.addEventListener("load", () => {
+            gsap.registerPlugin(ScrollTrigger);
             gsap.from(".hero-heading", {
                 x: -100,
                 opacity: 0,
@@ -47,21 +50,21 @@
             </a>
 
             <ul class="nav-links" id="nav-links">
-                <li class="nav-link-home"><a href="#">Home</a></li>
-                <li class="nav-link"><a href="#">About Us</a></li>
-                <li class="nav-link"><a href="#">Electrical Vehicle</a></li>
-                <li class="nav-link"><a href="#">Smart Key</a></li>
-                <li class="nav-link"><a href="#">Smart TV</a></li>
+                <li class="nav-link-home nav-c-changes"><a href="#">Home</a></li>
+                <li class="nav-link nav-c-changes"><a href="#">About Us</a></li>
+                <li class="nav-link nav-c-changes"><a href="#">Electrical Vehicle</a></li>
+                <li class="nav-link nav-c-changes"><a href="#">Smart Key</a></li>
+                <li class="nav-link nav-c-changes"><a href="#">Smart TV</a></li>
                 <!-- Our Solution with Dropdown -->
-                <li class="nav-link dropdown">
-                    <a href="#" class="dropdown-toggle">Our Solution <i class="fa-solid fa-angle-down"></i></a>
+                <li class="nav-link dropdown nav-c-changes">
+                    <a href="#" class="dropdown-toggle ">Our Solution <i class="fa-solid fa-angle-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li class="nav-link"><a href="#">Digital Marketing</a></li>
-                        <li class="nav-link"><a href="#">AI Solutions</a></li>
+                        <li class="nav-link"><a href="#" style="color: #000;">Digital Marketing</a></li>
+                        <li class="nav-link"><a href="#" style="color: #000;">AI Solutions</a></li>
                     </ul>
                 </li>
-                <li class="nav-link"><a href="#">Career</a></li>
-                <li class="nav-link"><a href="#">Contact Us</a></li>
+                <li class="nav-link nav-c-changes"><a href="#">Career</a></li>
+                <li class="nav-link nav-c-changes"><a href="#">Contact Us</a></li>
             </ul>
 
             <a class="taltbtn" href="#">Let's Talk</a>
@@ -87,6 +90,23 @@
                 dropdown.classList.toggle('open');
             });
         </script>
+
+        <script>
+            window.addEventListener("scroll", function () {
+                const nav = document.querySelector(".nav");
+                const navLinks = document.querySelectorAll(".nav-c-changes");
+
+                if (window.scrollY > 0) {
+                    nav.classList.add("scrolled");
+                    navLinks.forEach(link => link.classList.add("scrolled"));
+                } else {
+                    nav.classList.remove("scrolled");
+                    navLinks.forEach(link => link.classList.remove("scrolled"));
+                }
+            });
+        </script>
+
+
 
 
     </header>
