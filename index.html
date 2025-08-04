@@ -8,7 +8,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <link rel="stylesheet" href="./style/style.css">
+    <script>
+        window.addEventListener("load", () => {
+            gsap.from(".hero-heading", {
+                x: -100,
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out",
+            });
+
+            gsap.from(".hero-subheading", {
+                x: -100,
+                opacity: 0,
+                duration: 1,
+                delay: 0.3,
+                ease: "power2.out",
+            });
+
+            gsap.from(".getbtn", {
+                x: -100,
+                opacity: 0,
+                duration: 1,
+                delay: 0.6,
+                ease: "power2.out",
+            });
+        });
+    </script>
+
 </head>
 
 <body>
@@ -72,7 +100,7 @@
                 <h1 class="hero-heading">Hii! We have pledged to <br>secure and make your <span
                         class="highlight">business</span> <br>more profitable.</h1>
                 <h2 class="hero-subheading">"Grow your business with us."</h2>
-                <a href="#" class="get-started-btn taltbtn">
+                <a href="#" class="get-started-btn taltbtn getbtn">
                     Get Started <i class="fas fa-arrow-right"></i>
                 </a>
             </div>

@@ -229,32 +229,41 @@ body {
 
 
 
+/* =========================
+   Base Hero Section Styling
+   ========================= */
 .hero-section {
     height: 90vh;
+    width: 100%;
+    overflow: hidden;
 }
 
 .hero-content-wrapper {
-    max-width: 1930px;
-    min-width: 1240px;
-    height: 90vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    align-items: center;
     margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 0 0 0 40px;
+    box-sizing: border-box;
 }
 
 .hero-text-coloum {
-    width: 650px;
+    flex: 1;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 30px;
     justify-content: center;
     align-items: flex-start;
-    margin-left: 80px;
+    padding: 20px;
 }
 
 .hero-heading {
     font-size: 2.5rem;
+    line-height: 1.3;
 }
 
 .highlight {
@@ -265,19 +274,19 @@ body {
     font-size: 2rem;
 }
 
-
-
 .hero-right-coloum {
+    flex: 1;
     background-color: #2196FE;
-    width: 50%;
     height: 90vh;
     border-bottom-left-radius: 25%;
     position: relative;
+    min-width: 300px;
 }
 
 .middle-image {
-    width: 500px;
-    height: 600px;
+    width: 70%;
+    max-width: 500px;
+    height: auto;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -286,41 +295,169 @@ body {
 
 .middle-image img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: contain;
 }
 
 .sub-image {
-    width: 120px;
+    width: 130px;
     position: absolute;
-    object-fit: contain;
 }
 
 .sub-image img {
     width: 100%;
     object-fit: contain;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: floatIn 1s ease-out forwards;
 }
 
 .sub-image-1 {
     top: 12%;
-    left: 20%;
+    left: 10%;
+    animation-delay: 0.3s;
 }
 
 .sub-image-2 {
-    width: 150px;
+    width: 140px;
     top: 15%;
-    right: 10%;
+    right: 5%;
+    animation-delay: 0.6s;
 }
 
 .sub-image-3 {
     bottom: 25%;
-    left: 15%;
+    left: 8%;
+    animation-delay: 0.9s;
 }
 
 .sub-image-4 {
     bottom: 20%;
-    right: 10%;
+    right: 5%;
+    animation-delay: 1.2s;
 }
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subtleFloat {
+    0% {
+        transform: translateY(10px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+.sub-image {
+    animation: floatIn 0.1s ease-out forwards, subtleFloat 4s ease-in-out infinite;
+}
+
+
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 1024px) {
+    .hero-content-wrapper {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 40px;
+    }
+
+    .hero-section {
+        height: auto;
+    }
+
+    .hero-text-coloum {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+    }
+
+    .hero-right-coloum {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        padding-bottom: 60px;
+        border-radius: 25px;
+    }
+
+    .middle-image {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: 0 auto;
+        width: 80%;
+        max-width: 300px;
+        padding-top: 50px;
+    }
+
+    .hero-heading {
+        font-size: 2rem;
+    }
+
+    .hero-subheading {
+        font-size: 1.4rem;
+    }
+
+    .getbtn {
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 14px;
+        background-color: #F23608;
+        color: white;
+        border-radius: 5px;
+        margin-top: 20px;
+        text-align: center;
+        border: none;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .sub-image {
+        width: 100px;
+
+    }
+
+    .hero-heading {
+        font-size: 1.6rem;
+        line-height: 1.4;
+    }
+
+    .hero-subheading {
+        font-size: 1.2rem;
+    }
+
+    .middle-image {
+        max-width: 260px;
+    }
+
+    .getbtn {
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+}
+
+
+
 
 .about-section {
     max-width: 1930px;
