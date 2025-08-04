@@ -111,7 +111,7 @@ body {
     color: #000;
 }
 
-.nav-c-changes.scrolled a{
+.nav-c-changes.scrolled a {
     color: #FFFFFF;
 }
 
@@ -191,6 +191,10 @@ body {
     .nav-links.show {
         max-height: 600px;
         padding: 20px 0;
+    }
+
+    .nav-link a {
+        color: #000;
     }
 
     .menu-toggle {
@@ -505,9 +509,25 @@ body {
     padding-bottom: 200px;
 }
 
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
 .about-left .about-tag {
     width: 250px;
+    animation: float 1.5s ease-in-out infinite;
 }
+
 
 .about-left .about-tag img {
     width: 100%;
@@ -553,7 +573,89 @@ body {
     line-height: 1.3;
     margin-bottom: 30px;
     color: #000000;
+    text-align: justify;
 }
+
+
+/* =================== Responsive Design ===================== */
+
+@media (max-width: 1024px) {
+    .about-section {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 40px;
+        min-width: auto;
+    }
+
+    .about-left {
+        width: 100%;
+        padding-bottom: 0;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .about-left .about-tag {
+        width: 180px;
+        margin-bottom: 200px;
+    }
+
+    .about-image {
+        position: relative;
+        width: 350px;
+        top: auto;
+        left: auto;
+        margin-top: 20px;
+    }
+
+    .about-right {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .about-heading {
+        font-size: 2rem;
+    }
+
+    .about-subheading {
+        font-size: 1.4rem;
+    }
+
+    .description {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-left .about-tag {
+        width: 140px;
+        padding-left: 0;
+        margin-right: 0;
+    }
+
+    .about-image {
+        width: 320px;
+    }
+
+    .about-heading {
+        font-size: 1.6rem;
+    }
+
+    .about-subheading {
+        font-size: 1.2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .taltbtn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
 
 .why-choose-section {
     max-width: 1930px;
@@ -561,6 +663,9 @@ body {
     margin: 0 auto;
     padding: 20px 40px;
     background-color: #F3F9FF;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .why-choose-section h1 {
@@ -577,7 +682,6 @@ body {
 
 .why-content {
     width: 60%;
-    text-align: justify;
 }
 
 .why-content p {
@@ -587,6 +691,7 @@ body {
     align-items: flex-;
     line-height: 1.2;
     letter-spacing: 1px;
+    text-align: justify;
 }
 
 .why-image-right {
@@ -634,39 +739,228 @@ body {
     left: 15%;
 }
 
-.why-card-container {
+/* Keyframes for float animation */
+@keyframes float {
+    0% {
+        transform: translateY(10px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+/* Add this animation to the images */
+.why-img-1,
+.why-img-2,
+.why-img-3 {
+    animation: float 3s ease-in-out infinite;
+}
+
+
+.why-slider-wrapper {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 40px 80px;
+    background: #F3F9FF;
+}
+
+.why-card-slider {
+    overflow: hidden;
+}
+
+.why-card-track {
     display: flex;
-    gap: 50px;
-    margin-top: 50px;
-    padding: 10px 50px;
+    justify-content: center;
+    /* margin: 0 auto; */
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
 }
 
 .why-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex: 0 0 45%;
+    box-sizing: border-box;
+    padding: 5px 10px;
     border: 2px solid #1A7ABD;
     border-radius: 10px;
-    padding: 5px 10px;
-    gap: 10px;
+    margin: 0 10px;
     background: #F5F9FF;
-    width: 600px;
+    display: flex;
+    /* gap: 10px; */
+    align-items: center;
+    margin: 0 25px;
 }
 
 .why-card img {
     width: 100px;
 }
 
-.why-card h2 {
+.why-card-content h2 {
     font-size: 1rem;
-    padding-bottom: 5px;
+    /* padding-bottom: 5px; */
 }
 
-.why-card p {
-    font-size: 0.7rem;
+.why-card-content p {
+    font-size: 0.8rem;
     text-align: justify;
     padding-right: 30px;
 }
+
+/* Buttons */
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #1A7ABD;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 5px;
+}
+
+.slide-btn.prev {
+    left: 10px;
+}
+
+.slide-btn.next {
+    right: 10px;
+}
+
+/* Dots */
+.dots-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dots-container .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #bbb;
+    margin: 0 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dots-container .dot.active {
+    background-color: #1A7ABD;
+    width: 10px;
+    height: 10px;
+}
+
+
+
+
+
+
+
+/* Responsive for tablets and below */
+@media screen and (max-width: 1024px) {
+    .why-choose-section {
+        padding: 20px;
+        min-width: unset;
+        flex-direction: column;
+    }
+
+    .why-container {
+        flex-direction: column;
+    }
+
+    .why-content,
+    .why-image-right {
+        width: 100%;
+    }
+
+    .why-content p {
+        padding: 20px;
+        font-size: 1.2rem;
+    }
+
+    .why-image-right {
+        height: 350px;
+        border-radius: 15%;
+    }
+
+    .why-main-img {
+        width: 220px;
+    }
+
+    .why-img-1,
+    .why-img-2,
+    .why-img-3 {
+        width: 70px;
+    }
+
+    .why-card-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .why-card {
+        flex-direction: column;
+        width: 90%;
+        text-align: center;
+    }
+
+    .why-card img {
+        width: 80px;
+    }
+
+    .why-card h2 {
+        font-size: 1.1rem;
+    }
+
+    .why-card p {
+        font-size: 0.9rem;
+        padding-right: 0;
+        padding: 10px;
+    }
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+    .why-choose-section h1 {
+        font-size: 1.6rem;
+    }
+
+    .why-content p {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .why-image-right {
+        height: 250px;
+    }
+
+    .why-main-img {
+        width: 160px;
+    }
+
+    .why-img-1,
+    .why-img-2,
+    .why-img-3 {
+        width: 50px;
+    }
+
+    .why-card h2 {
+        font-size: 1rem;
+    }
+
+    .why-card p {
+        font-size: 0.75rem;
+    }
+}
+
 
 .export-section {
     max-width: 1930px;

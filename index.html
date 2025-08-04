@@ -8,37 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 
     <link rel="stylesheet" href="./style/style.css">
-    <script>
-        window.addEventListener("load", () => {
-            gsap.registerPlugin(ScrollTrigger);
-            gsap.from(".hero-heading", {
-                x: -100,
-                opacity: 0,
-                duration: 1,
-                ease: "power2.out",
-            });
-
-            gsap.from(".hero-subheading", {
-                x: -100,
-                opacity: 0,
-                duration: 1,
-                delay: 0.3,
-                ease: "power2.out",
-            });
-
-            gsap.from(".getbtn", {
-                x: -100,
-                opacity: 0,
-                duration: 1,
-                delay: 0.6,
-                ease: "power2.out",
-            });
-        });
-    </script>
+    <Script src="/assets/animation/animation.js"></Script>
 
 </head>
 
@@ -59,6 +34,9 @@
                 <li class="nav-link dropdown nav-c-changes">
                     <a href="#" class="dropdown-toggle ">Our Solution <i class="fa-solid fa-angle-down"></i></a>
                     <ul class="dropdown-menu">
+                        <li class="nav-link"><a href="#" style="color: #000;">Web Development</a></li>
+                        <li class="nav-link"><a href="#" style="color: #000;">App Development</a></li>
+                        <li class="nav-link"><a href="#" style="color: #000;">UI/UX Design</a></li>
                         <li class="nav-link"><a href="#" style="color: #000;">Digital Marketing</a></li>
                         <li class="nav-link"><a href="#" style="color: #000;">AI Solutions</a></li>
                     </ul>
@@ -105,10 +83,6 @@
                 }
             });
         </script>
-
-
-
-
     </header>
 
 
@@ -155,7 +129,7 @@
             </div>
 
         </div>
-        <div class="about-right">
+        <div class="about-right animate-on-scroll">
             <h1 class="about-heading">Our pledge for Improvement.</h1>
             <h3 class="about-subheading highlight">“Driven by Innovation, Guided by Purpose”</h3>
             <p class="description">Technove Global Software Pvt. Ltd. believes that innovation is a journey, not a
@@ -175,7 +149,7 @@
     </section>
 
     <section class="why-choose-section">
-        <h1>Why <span class="highlight">Choose Us</span></h1>
+        <h1 class="why-heading">Why <span class="highlight">Choose Us</span></h1>
         <div class="why-container">
             <div class="why-content">
                 <p>We know, every company says they’re “innovative”, “dynamic”, and “like a family”. We won’t bore you
@@ -200,31 +174,181 @@
             </div>
         </div>
 
-        <div class="why-card-container">
-            <div class="why-card">
-                <img src="/assets/imgaes/Group 2.png" alt="">
-                <div class="why-card-content">
-                    <h2>Integrated Product & Service Ecosystem</h2>
-                    <p>Our ability to align hardware, software, and digital strategies into a single cohesive ecosystem.
-                        This saves them the complexity of dealing with multiple vendors, reduces cost, and accelerates
-                        project delivery. Our holistic approach ensures every element—from product design to post-launch
-                        marketing—is aligned with your business goals.</p>
+        <div class="why-slider-wrapper">
+            <button class="slide-btn prev">&#10094;</button>
+
+            <div class="why-card-slider">
+                <div class="why-card-track">
+                    <div class="why-card"> <!-- Card 1 -->
+                        <img src="/assets/imgaes/Group 2.png" alt="">
+                        <div class="why-card-content">
+                            <h2>Integrated Product & Service Ecosystem</h2>
+                            <p>our ability to align hardware, software, and digital strategies into a single cohesive
+                                ecosystem. This saves them the complexity of dealing with multiple vendors, reduces
+                                cost, and accelerates project delivery. Our holistic approach ensures every element—from
+                                product design to post-launch marketing—is aligned with your business goals.</p>
+                        </div>
+                    </div>
+                    <div class="why-card"> <!-- Card 2 -->
+                        <img src="/assets/imgaes/Group 2 (1).png" alt="">
+                        <div class="why-card-content">
+                            <h2>Secure and Scalable Technology</h2>
+                            <p>Security and scalability are built into the foundation of everything we create. We
+                                understand that technology must evolve with your growth. That's why we build with
+                                scalable infrastructure and modular frameworks, ensuring your solution grows with your
+                                business—securely and efficiently. We follow best practices in data encryption, cloud
+                                hosting, and regulatory compliance to give our clients complete peace of mind.</p>
+                        </div>
+                    </div>
+                    <!-- You can add more cards -->
+                    <div class="why-card"> <!-- Card 3 -->
+                        <img src="/assets/imgaes/Group 2 (1).png" alt="">
+                        <div class="why-card-content">
+                            <h2>Creative & Technical Expertise Under One Roof</h2>
+                            <p>Most companies specialize in either creative or technical services. At Technove, we excel
+                                in both. Whether we’re building a payment app, designing a scooter interface, or running
+                                a digital ad campaign, everything is coordinated under a unified vision. This in-house
+                                synergy ensures consistency, faster turnaround times, and better collaboration—all of
+                                which directly benefit our clients’ bottom line.</p>
+                        </div>
+                    </div>
+                    <div class="why-card"> <!-- Card 4 -->
+                        <img src="/assets/imgaes/Group 2 (1).png" alt="">
+                        <div class="why-card-content">
+                            <h2>Reliable After-Sales Service</h2>
+                            <p>We stand by our products and services long after delivery. Whether you need scooter
+                                maintenance, app updates, technical troubleshooting, or SEO optimization support, our
+                                dedicated team ensures timely, professional after-sales assistance. Clients choose us
+                                for our commitment to long-term value and reliable service.</p>
+                        </div>
+                    </div>
+                    <div class="why-card"> <!-- Card 5 -->
+                        <img src="/assets/imgaes/Group 2 (1).png" alt="">
+                        <div class="why-card-content">
+                            <h2>Startup Agility with Process Discipline</h2>
+                            <p>As a startup, we bring agility, speed, and innovation to every project. But we also
+                                understand that consistent delivery, process discipline, and clear communication are
+                                non-negotiable in today’s business environment. whether it’s managing software releases,
+                                product updates, or ongoing marketing campaigns, our clients appreciate our ability to
+                                move fast while staying aligned with long-term objectives. We adapt quickly, respond to
+                                change, and keep execution focused without compromising on quality.</p>
+                        </div>
+                    </div>
+                    <div class="why-card"> <!-- Card 6 -->
+                        <img src="/assets/imgaes/Group 2 (1).png" alt="">
+                        <div class="why-card-content">
+                            <h2>Scalable Partnerships, Not Just Projects</h2>
+                            <p>We approach every engagement as the start of a long-term partnership. Whether we’re
+                                helping a client launch their first product or scale an existing system, we align
+                                ourselves with their business goals. Our clients appreciate that we bring strategic
+                                thinking, not just execution. Our ability to scale our support with your growth ensures
+                                continuity, consistency, and results—at every stage of your journey.</p>
+                        </div>
+                    </div>
+                    <div class="why-card"> <!-- Card 6 -->
+                        <img src="/assets/imgaes/Group 2 (1).png" alt="">
+                        <div class="why-card-content">
+                            <h2>Committed to India’s Digital Growth Story</h2>
+                            <p>As an Indian startup, we take pride in contributing to the country’s digital
+                                transformation. Whether it’s empowering merchants with EMI control, bringing affordable
+                                mobility through electric scooters, or supporting regional businesses through app
+                                development and digital marketing—we’re committed to building products that are
+                                relevant, inclusive, and impactful. Our clients choose us because they see us not just
+                                as service providers, but as contributors to a shared vision for India’s tech-powered
+                                future.</p>
+                        </div>
+                    </div>
+                    <div class="why-card"> <!-- Card 1 -->
+                        <img src="/assets/imgaes/Group 2.png" alt="">
+                        <div class="why-card-content">
+                            <h2>Integrated Product & Service Ecosystem</h2>
+                            <p>our ability to align hardware, software, and digital strategies into a single cohesive
+                                ecosystem. This saves them the complexity of dealing with multiple vendors, reduces
+                                cost, and accelerates project delivery. Our holistic approach ensures every element—from
+                                product design to post-launch marketing—is aligned with your business goals.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="why-card">
-                <img src="/assets/imgaes/Group 2 (1).png" alt="">
-                <div class="why-card-content">
-                    <h2>Creative & Technical Expertise Under One Roof</h2>
-                    <p>We approach every engagement as the start of a long-term partnership. Whether we’re helping a
-                        client launch their first product or scale an existing system, we align ourselves with their
-                        business goals. Our clients appreciate that we bring strategic thinking, not just execution. Our
-                        ability to scale our support with your growth ensures continuity, consistency, and results—at
-                        every stage of your journey</p>
-                </div>
-            </div>
+            <button class="slide-btn next">&#10095;</button>
 
+            <div class="dots-container"></div>
         </div>
+
+        <script>
+            const track = document.querySelector(".why-card-track");
+            const card = document.querySelectorAll(".why-card");
+            const prevBtn = document.querySelector(".slide-btn.prev");
+            const nextBtn = document.querySelector(".slide-btn.next");
+
+            const cardsPerSlide = 2;
+            let currentIndex = 0;
+            let isDragging = false;
+            let startX = 0;
+            let scrollLeft = 0;
+
+            function updateSliderPosition() {
+                const slideWidth = track.offsetWidth / cardsPerSlide;
+                track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            }
+
+            prevBtn.addEventListener("click", () => {
+                currentIndex = (currentIndex - 1 + Math.ceil(card.length / cardsPerSlide)) % Math.ceil(card.length / cardsPerSlide);
+                updateSliderPosition();
+            });
+
+            nextBtn.addEventListener("click", () => {
+                currentIndex = (currentIndex + 1) % Math.ceil(card.length / cardsPerSlide);
+                updateSliderPosition();
+            });
+
+            window.addEventListener("resize", updateSliderPosition);
+
+            // Mouse drag/swipe support
+            track.addEventListener("mousedown", (e) => {
+                isDragging = true;
+                startX = e.pageX;
+                scrollLeft = currentIndex;
+                track.style.cursor = "grabbing";
+            });
+
+            track.addEventListener("mouseleave", () => {
+                isDragging = false;
+                track.style.cursor = "grab";
+            });
+
+            track.addEventListener("mouseup", (e) => {
+                isDragging = false;
+                track.style.cursor = "grab";
+                const diff = e.pageX - startX;
+                const threshold = 50; // Minimum drag to trigger slide
+                if (diff > threshold && currentIndex > 0) {
+                    currentIndex--;
+                } else if (diff < -threshold && currentIndex < Math.ceil(cards.length / cardsPerSlide) - 1) {
+                    currentIndex++;
+                }
+                updateSliderPosition();
+            });
+
+            track.addEventListener("mousemove", (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+            });
+
+            updateSliderPosition();
+
+            // Auto slide every 4 seconds
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % Math.ceil(card.length / cardsPerSlide);
+                updateSliderPosition();
+            }, 4000);
+
+
+            // updateSliderPosition();
+        </script>
+
+
 
     </section>
 
