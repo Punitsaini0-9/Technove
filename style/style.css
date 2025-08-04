@@ -10,15 +10,16 @@ body {
     overflow-x: hidden;
 }
 
+/* Base nav styles */
 .nav {
     max-width: 1920px;
-    min-width: auto;
     height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 60px;
     margin: 0 auto;
+    position: relative;
 }
 
 .nav-logo {
@@ -34,11 +35,56 @@ body {
 .nav-links {
     display: flex;
     gap: 30px;
+
 }
 
-.nav-link {
-    list-style: none;
+.nav-link a,
+.nav-link-home a {
+    position: relative;
+    display: inline-block;
+    padding-left: 15px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #000;
 }
+
+.nav-link-home::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-40%);
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.nav-link,
+.nav-link-home {
+    list-style: none;
+    position: relative;
+}
+
+.nav-link a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-link a:hover::before {
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
 
 .nav-link a {
     text-decoration: none;
@@ -48,12 +94,140 @@ body {
 
 .taltbtn {
     text-decoration: none;
-    color: #ffff;
+    color: #fff;
     background: linear-gradient(90deg, #1A7ABD, #00B8F0);
     padding: 10px 30px;
     font-weight: 700;
     border-radius: 10px;
 }
+
+/* Hamburger menu (hidden by default) */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Dropdown base */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -60%;
+    min-width: 250px;
+    background-color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 20;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dropdown-menu li {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: #000;
+    text-decoration: none;
+}
+
+
+@media (max-width: 1024px) {
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        max-height: 0;
+        padding: 0;
+        z-index: 10;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: max-height 0.5s ease, padding 0.3s ease;
+        text-align: left;
+    }
+
+    .nav-links.show {
+        max-height: 600px;
+        padding: 20px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 30px;
+    }
+
+    .taltbtn {
+        display: none;
+    }
+
+    .dropdown {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .dropdown a {
+        margin: 0;
+        /* padding: 10px 0; */
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        background-color: transparent;
+        border: 0;
+        box-shadow: none;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
+        width: 100%;
+    }
+
+    .dropdown-menu li {
+        margin: 0;
+        /* padding: 10px 0; */
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown.open .dropdown-menu {
+        opacity: 1;
+        max-height: 500px;
+        pointer-events: auto;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+    }
+}
+
+
+
 
 .hero-section {
     height: 90vh;
@@ -1004,7 +1178,7 @@ body {
     color: #a0aec0;
     max-width: 400px;
     text-align: left;
-    
+
 }
 
 .social-media {

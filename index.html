@@ -15,23 +15,56 @@
     <header class="header">
         <nav class="nav">
             <a href="#" class="nav-logo">
-                <img src="./assets/imgaes/logo 1.png" alt="logo">
+                <img src="./assets/imgaes/logo 1.png" alt="logo" />
             </a>
 
-            <ul class="nav-links">
-                <li class="nav-link"><a href="#">Home</a></li>
-                <li class="nav-link"><a href="">About Us</a></li>
-                <li class="nav-link"><a href="">ELectrical Vehicle</a></li>
-                <li class="nav-link"><a href="">Smart Key</a></li>
-                <li class="nav-link"><a href="">Smart Tv</a></li>
-                <li class="nav-link"><a href="">Our Solution</a></li>
-                <li class="nav-link"><a href="">Career</a></li>
-                <li class="nav-link"><a href="">Contact Us</a></li>
+            <ul class="nav-links" id="nav-links">
+                <li class="nav-link-home"><a href="#">Home</a></li>
+                <li class="nav-link"><a href="#">About Us</a></li>
+                <li class="nav-link"><a href="#">Electrical Vehicle</a></li>
+                <li class="nav-link"><a href="#">Smart Key</a></li>
+                <li class="nav-link"><a href="#">Smart TV</a></li>
+                <!-- Our Solution with Dropdown -->
+                <li class="nav-link dropdown">
+                    <a href="#" class="dropdown-toggle">Our Solution <i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-link"><a href="#">Web Development</a></li>
+                        <li class="nav-link"><a href="#">App Development</a></li>
+                        <li class="nav-link"><a href="#">AI Solutions</a></li>
+                        <li class="nav-link"><a href="#">UI/UX Design</a></li>
+                    </ul>
+                </li>
+                <li class="nav-link"><a href="#">Career</a></li>
+                <li class="nav-link"><a href="#">Contact Us</a></li>
             </ul>
 
-            <a class="taltbtn" href="">Lets Talk</a>
+            <a class="taltbtn" href="#">Let's Talk</a>
+
+            <div class="menu-toggle" id="menu-toggle">
+                ☰
+            </div>
         </nav>
+
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const dropdown = document.querySelector('.dropdown');
+
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+            });
+
+            // Mobile dropdown toggle
+            dropdownToggle.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent navigation
+                dropdown.classList.toggle('open');
+            });
+        </script>
+
+
     </header>
+
 
     <section class="hero-section">
         <div class="hero-content-wrapper">
