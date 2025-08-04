@@ -251,6 +251,7 @@ body {
     .dropdown:hover .dropdown-menu {
         opacity: 1;
     }
+
 }
 
 
@@ -1817,7 +1818,8 @@ body {
 /* Tablets (sm & md) */
 @media (min-width: 640px) {
     .tech-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns on tablets */
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 columns on tablets */
     }
 
     .tech-item img {
@@ -1836,7 +1838,8 @@ body {
     }
 
     .tech-grid {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens */
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 columns on large screens */
         gap: 2.5rem;
     }
 

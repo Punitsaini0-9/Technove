@@ -56,31 +56,44 @@
             const dropdownToggle = document.querySelector('.dropdown-toggle');
             const dropdown = document.querySelector('.dropdown');
 
-            menuToggle.addEventListener('click', () => {
+            // Toggle menu on click
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent closing when clicking toggle
                 navLinks.classList.toggle('show');
             });
 
-            // Mobile dropdown toggle
+            // Dropdown toggle (mobile)
             dropdownToggle.addEventListener('click', (e) => {
-                e.preventDefault(); // Prevent navigation
+                e.preventDefault();
+                e.stopPropagation(); // Prevent closing when clicking dropdown
                 dropdown.classList.toggle('open');
             });
-        </script>
 
-        <script>
+            // Close nav if click happens outside
+            document.addEventListener('click', (e) => {
+                const isClickInsideMenu = navLinks.contains(e.target) || menuToggle.contains(e.target);
+
+                if (!isClickInsideMenu) {
+                    navLinks.classList.remove('show');
+                    dropdown.classList.remove('open');
+                }
+            });
+
+            // Scroll navbar style
             window.addEventListener("scroll", function () {
                 const nav = document.querySelector(".nav");
-                const navLinks = document.querySelectorAll(".nav-c-changes");
+                const navLinksScroll = document.querySelectorAll(".nav-c-changes");
 
                 if (window.scrollY > 0) {
                     nav.classList.add("scrolled");
-                    navLinks.forEach(link => link.classList.add("scrolled"));
+                    navLinksScroll.forEach(link => link.classList.add("scrolled"));
                 } else {
                     nav.classList.remove("scrolled");
-                    navLinks.forEach(link => link.classList.remove("scrolled"));
+                    navLinksScroll.forEach(link => link.classList.remove("scrolled"));
                 }
             });
         </script>
+
     </header>
 
 
@@ -538,9 +551,7 @@
             <!-- Card 5: E-commerce -->
             <div class="service-card">
                 <div class="service-icon-wrapper">
-                    <img style="width: 150px;"
-                        src="assets/icons/image-removebg-preview.png"
-                        alt="">
+                    <img style="width: 150px;" src="assets/icons/image-removebg-preview.png" alt="">
                 </div>
                 <h4 class="card-title">E-commerce</h4>
                 <p class="card-description">
