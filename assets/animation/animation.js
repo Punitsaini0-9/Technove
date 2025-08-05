@@ -160,7 +160,7 @@ gsap.from(".trans-content > * ", {
 });
 
 
-gsap.from(".section-header h2 ", {
+gsap.from(".section-header < * ", {
   y: -50,
   scale: 0,
   duration: 1,
@@ -187,3 +187,17 @@ gsap.utils.toArray(".tech-item").forEach((card, i) => {
     delay: i * 0.2, // stagger effect
   });
 });
+
+// gsap.from(".main-heading", {
+//   y: -50,
+//   scale: 0,
+//   duration: 1,
+//   ease: "power2.out",
+// //   stagger: 0.5,
+//   scrollTrigger: {
+//     trigger: ".main-heading",
+//     start: "top 80%",
+//     toggleActions: "play none none none",
+//   },
+// });
+
