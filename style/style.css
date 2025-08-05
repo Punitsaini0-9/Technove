@@ -823,9 +823,9 @@ body {
     /* margin: 0 10px; */
     background: #F5F9FF;
     display: flex;
-    /* gap: 10px; */
+    gap: 10px;
     align-items: center;
-    margin: 0 25px;
+    margin: 0 20px;
 }
 
 .why-card img {
@@ -840,7 +840,7 @@ body {
 .why-card-content p {
     font-size: 0.8rem;
     text-align: justify;
-    padding-right: 30px;
+    /* padding-right: 30px; */
 }
 
 /* Buttons */
@@ -895,15 +895,14 @@ body {
 
 @media screen and (max-width: 1240px) {
     .why-card {
-        /* gap: 10px; */
-        /* margin:0 0px 0 0; */
-        padding: 0;
+        padding: 5px 10px;
+        margin: 0 30px 0 0;
     }
 
     .why-card-track {
         gap: 5px;
         justify-content: left;
-        margin-right: 10px;
+        /* margin-right: 10px; */
     }
 
 }
@@ -1984,6 +1983,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     margin-top: 20px;
+
     text-align: left;
 }
 
@@ -1991,6 +1991,7 @@ body {
     width: 80px;
     height: 80px;
     margin-left: 10px;
+    margin-bottom: 20px;
 }
 
 .follow {
@@ -2007,6 +2008,7 @@ body {
 .follow img {
     width: 20px;
     height: 20px;
+    margin-top: 20px;
 }
 
 .tagline {
@@ -2023,6 +2025,7 @@ body {
     max-width: 400px;
     text-align: left;
     margin-left: 10px;
+    margin-top: 10px;
 }
 
 .social-media {
