@@ -36,6 +36,18 @@ window.addEventListener("load", () => {
     },
   });
 
+  gsap.from(".why-heading", {
+    x: -100,
+    opacity: 0,
+    duration: 3,
+    delay: 0.5,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".why-heading",
+      toggleActions: "play none none none",
+    },
+  });
+
   gsap.from(".why-content p", {
     x: -100,
     opacity: 0,
@@ -132,7 +144,6 @@ gsap.utils.toArray(".icon-item").forEach((card, i) => {
   });
 });
 
-
 gsap.from(".testimonial > * ", {
   x: -100,
   scale: 0,
@@ -159,19 +170,31 @@ gsap.from(".trans-content > * ", {
   },
 });
 
-
-gsap.from(".section-header > * ", {
+gsap.from(".section-header ", {
   y: -50,
   scale: 0,
   duration: 1,
   ease: "power2.out",
-//   stagger: 0.5,
+    // stagger: 0.5,
   scrollTrigger: {
     trigger: ".section-header",
     start: "top 80%",
     toggleActions: "play none none none",
   },
 });
+
+// gsap.from(".section-header > * ", {
+//   y: -50,
+//   scale: 0,
+//   duration: 1,
+//   ease: "power2.out",
+//     // stagger: 0.5,
+//   scrollTrigger: {
+//     trigger: ".section-header",
+//     start: "top 80%",
+//     toggleActions: "play none none none",
+//   },
+// });
 
 gsap.utils.toArray(".tech-item").forEach((card, i) => {
   gsap.from(card, {
@@ -200,4 +223,3 @@ gsap.utils.toArray(".tech-item").forEach((card, i) => {
 //     toggleActions: "play none none none",
 //   },
 // });
-
