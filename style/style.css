@@ -600,6 +600,15 @@ body {
     text-align: justify;
 }
 
+.Read-btn {
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(90deg, #1A7ABD, #00B8F0);
+    padding: 10px 30px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
 
 /* =================== Responsive Design ===================== */
 
@@ -811,12 +820,12 @@ body {
     padding: 5px 10px;
     border: 2px solid #1A7ABD;
     border-radius: 10px;
-    margin: 0 10px;
+    /* margin: 0 10px; */
     background: #F5F9FF;
     display: flex;
     /* gap: 10px; */
     align-items: center;
-    margin: 0 20px;
+    margin: 0 25px;
 }
 
 .why-card img {
@@ -837,16 +846,20 @@ body {
 /* Buttons */
 .slide-btn {
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
-    background: #1A7ABD;
+    background: linear-gradient(90deg, #1A7ABD, #00B8F0);
     color: white;
     border: none;
-    padding: 10px;
-    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 50%;
+    font-size: 28px;
     cursor: pointer;
     z-index: 2;
-    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 5px; */
 }
 
 .slide-btn.prev {
@@ -862,21 +875,22 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    padding-top: 20px;
 }
 
 .dots-container .dot {
-    width: 10px;
-    height: 10px;
-    background-color: #bbb;
+    width: 40px;
+    height: 5px;
+    background-color: #1a79bdb8;
     margin: 0 5px;
-    border-radius: 50%;
+    border-radius: 20px;
     cursor: pointer;
 }
 
 .dots-container .dot.active {
-    background-color: #1A7ABD;
-    width: 10px;
-    height: 10px;
+    background-color: #135c91;
+    width: 80px;
+    height: 5px;
 }
 
 @media screen and (max-width: 1240px) {
