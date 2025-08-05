@@ -308,21 +308,21 @@
             function createDots() {
                 dotsContainer.innerHTML = "";
                 for (let i = 0; i < totalSlide; i++) {
-                    const dot = document.createElement("span");
-                    dot.classList.add("dot");
-                    if (i === currentIndex) dot.classList.add("active");
-                    dot.addEventListener("click", () => {
+                    const dot1 = document.createElement("span");
+                    dot1.classList.add("dot");
+                    if (i === currentIndex) dot1.classList.add("active");
+                    dot1.addEventListener("click", () => {
                         currentIndex = i;
                         updateSliderPosition();
                     });
-                    dotsContainer.appendChild(dot);
+                    dotsContainer.appendChild(dot1);
                 }
             }
 
             function updateActiveDot() {
-                const dots = document.querySelectorAll(".dot");
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle("active", i === currentIndex);
+                const dots1 = document.querySelectorAll(".dot");
+                dots1.forEach((dot1, i) => {
+                    dot1.classList.toggle("active", i === currentIndex);
                 });
             }
 
