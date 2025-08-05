@@ -55,7 +55,7 @@ window.addEventListener("load", () => {
     delay: 0.5,
     ease: "power2.out",
     scrollTrigger: {
-      trigger: ".why-choose-section",
+      trigger: ".export-left",
       toggleActions: "play none none none",
     },
   });
@@ -153,7 +153,7 @@ gsap.from(".trans-content > * ", {
   ease: "power2.out",
   stagger: 0.5,
   scrollTrigger: {
-    trigger: ".industries-content",
+    trigger: ".trans-content",
     start: "top 80%",
     toggleActions: "play none none none",
   },
