@@ -190,6 +190,7 @@ body {
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
     }
+
     .nav-links.show {
         max-height: 600px;
         padding: 20px 0;
@@ -2118,6 +2119,12 @@ body {
 
     .column h3 {
         justify-content: flex-start;
+    }
+
+    .copyright {
+        margin-bottom: 20px;
+        text-align: center;
+        width: 100%;
     }
 }
 
