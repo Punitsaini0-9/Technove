@@ -160,7 +160,7 @@ gsap.from(".trans-content > * ", {
 });
 
 
-gsap.from(".section-header < * ", {
+gsap.from(".section-header > * ", {
   y: -50,
   scale: 0,
   duration: 1,
