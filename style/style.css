@@ -171,6 +171,7 @@ body {
 
 
 @media (max-width: 1024px) {
+
     .nav-links {
         position: absolute;
         top: 80px;
@@ -186,8 +187,9 @@ body {
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         transition: max-height 0.5s ease, padding 0.3s ease;
         text-align: left;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
     }
-
     .nav-links.show {
         max-height: 600px;
         padding: 20px 0;
@@ -232,13 +234,13 @@ body {
         border: 0;
         box-shadow: none;
         transition: max-height 0.4s ease, opacity 0.3s ease;
-        width: 100%;
+        /* width: 100%; */
     }
 
     .dropdown-menu li {
         margin: 0;
         /* padding: 10px 0; */
-        width: 100%;
+        /* width: 100%; */
         text-align: center;
     }
 
@@ -250,6 +252,26 @@ body {
 
     .dropdown:hover .dropdown-menu {
         opacity: 1;
+    }
+
+    .nav-c-changes a {
+        color: #000 !important;
+    }
+
+    .nav-c-changes.scrolled a {
+        color: #000 !important;
+    }
+
+    .nav-link a::before {
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .nav-link a:hover::before {
+        opacity: 1;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
 }
@@ -1710,6 +1732,15 @@ body {
 }
 
 
+.Consultation-btn {
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(90deg, #1A7ABD, #00B8F0);
+    padding: 10px 30px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
 @media (max-width: 1024px) {
     .trans-content h1 {
         font-size: 2rem;
@@ -1722,6 +1753,15 @@ body {
     .trans-left-top,
     .trans-right-bottom {
         width: 150px;
+    }
+
+    .Consultation-btn {
+        text-decoration: none;
+        color: #fff;
+        background: linear-gradient(90deg, #1A7ABD, #00B8F0);
+        padding: 10px 30px;
+        font-weight: 700;
+        border-radius: 10px;
     }
 }
 
@@ -1738,6 +1778,15 @@ body {
     .trans-right-bottom {
         width: 120px;
     }
+
+    .Consultation-btn {
+        text-decoration: none;
+        color: #fff;
+        background: linear-gradient(90deg, #1A7ABD, #00B8F0);
+        padding: 10px 30px;
+        font-weight: 700;
+        border-radius: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1747,11 +1796,21 @@ body {
 
     .trans-content p {
         font-size: 0.95rem;
+        text-align: justify;
     }
 
     .trans-left-top,
     .trans-right-bottom {
         width: 90px;
+    }
+
+    .Consultation-btn {
+        text-decoration: none;
+        color: #fff;
+        background: linear-gradient(90deg, #1A7ABD, #00B8F0);
+        padding: 10px 30px;
+        font-weight: 700;
+        border-radius: 10px;
     }
 }
 
