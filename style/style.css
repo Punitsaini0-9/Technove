@@ -1066,24 +1066,36 @@ body {
 
 .export-left {
     width: 100%;
-    background-color: #043F2E;
+    background-color: #081C18;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 40px 20px;
+    padding: 20px 10px;
 }
 
 .exp {
     color: #FFFFFF;
     font-size: 3rem;
     letter-spacing: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .exp h5 {
     font-size: 2rem;
     letter-spacing: 10px;
 }
+
+.exp h1,
+.exp h2 {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+}
+
 
 .export-right {
     width: 100%;
