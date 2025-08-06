@@ -2403,3 +2403,247 @@ body {
         gap: 0;
     }
 }
+
+
+
+/* ========================================
+                    Start Pop Up Form
+========================================== */
+.modal-overlay {
+    display: none;
+    /* mai: hide modal by default */
+    position: fixed;
+    /* mai: position modal over the page */
+    z-index: 1000;
+    /* mai: keep it on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* mai: full screen width */
+    height: 100%;
+    /* mai: full screen height */
+    overflow: auto;
+    /* mai: allow scroll if content too long */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* mai: semi-black background */
+    display: flex;
+    /* mai: use flexbox */
+    justify-content: center;
+    /* mai: center modal horizontally */
+    align-items: center;
+    /* mai: center modal vertically */
+    padding: 1rem;
+    /* mai: spacing around modal content */
+}
+
+.modal-content {
+    background: linear-gradient(to bottom right, #e0f2f7, #c0e0f0);
+    border-radius: 1.5rem;
+    /* mai: rounded edges */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    /* mai: drop shadow */
+    display: flex;
+    justify-content: center;
+    /* mai: center form inside */
+    max-width: 1000px;
+    /* mai: max width of modal */
+    max-height: 600px;
+    width: 100%;
+    overflow: hidden;
+    /* mai: keep inside rounded border */
+    position: relative;
+    /* mai: for close button positioning */
+    padding: 10px;
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #0D2C54;
+    /* mai: button text color */
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.7);
+    /* mai: button background */
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    z-index: 1001;
+    /* mai: above modal */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.close-button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* mai: hover effect */
+}
+
+.form-left-section {
+    flex: 1;
+    /* background: linear-gradient(to bottom right, #e0f2f7, #c0e0f0); */
+    /* mai: background gradient */
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 400px;
+}
+
+.form-left-section .illustration-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.form-left-section .illustration-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.form-right-section {
+    flex: 1;
+    background: linear-gradient(to bottom right, #e0f2f7, #c0e0f0);
+    padding: 1rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+.form-right-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a202c;
+    /* mai: heading color */
+    margin-bottom: 0.5rem;
+}
+
+.form-right-section p.subtext {
+    color: #6a737b;
+    /* mai: subtext color */
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-field-container {
+    width: 100%;
+}
+
+.form-right-section input[type="text"],
+.form-right-section input[type="email"],
+.form-right-section input[type="tel"],
+.form-right-section select,
+.form-right-section textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    /* mai: input border color */
+    border-radius: 0.5rem;
+    background-color: #f7fafc;
+    color: #1a202c;
+    font-size: 1rem;
+    outline: none;
+    margin-bottom: 10px;
+    border: 1px solid #00B8F0;
+}
+
+.form-right-section input[type="text"]::placeholder,
+.form-right-section input[type="email"]::placeholder,
+.form-right-section input[type="tel"]::placeholder,
+.form-right-section textarea::placeholder,
+.form-right-section select option[value=""] {
+    color: #a0aec0;
+    /* mai: placeholder color */
+}
+
+.form-right-section select {
+    color: #1a202c;
+}
+
+.form-right-section select option {
+    color: #1a202c;
+    background-color: #f7fafc;
+}
+
+.form-right-section input[type="text"]:focus,
+.form-right-section input[type="email"]:focus,
+.form-right-section input[type="tel"]:focus,
+.form-right-section select:focus,
+.form-right-section textarea:focus {
+    border: 2px solid #4299e1;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3);
+}
+
+.form-right-section textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+.submit-button {
+    background: linear-gradient(135deg, #2a60c8 0%, #00bcd4 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.privacy-message {
+    text-align: center;
+    color: #000;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+        /* mai: stack modal sections */
+        max-width: 95%;
+        min-height: auto;
+    }
+
+    .form-left-section {
+        display: none;
+        /* mai: hide image on small screen */
+    }
+
+    .form-right-section {
+        height: auto;
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+    }
+
+    .close-button {
+        top: 0.5rem;
+        right: 0.5rem;
+        font-size: 1.5rem;
+        width: 2rem;
+        height: 2rem;
+    }
+}

@@ -11,6 +11,55 @@
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/contact.css">
 
+    <style>
+        /* Custom Message Box Styling (for replacing alert) */
+        .custom-message-box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            /* Higher than modal */
+        }
+
+        .custom-message-content {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            color: #333;
+            max-width: 300px;
+        }
+
+        .custom-message-content p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .custom-message-close {
+            background: linear-gradient(to right, #2575fc 0%, #6a11cb 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .custom-message-close:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
 </head>
 
 <body>
@@ -42,7 +91,7 @@
                 <li class="nav-link nav-c-changes"><a href="/contact.html">Contact Us</a></li>
             </ul>
 
-            <a class="taltbtn" href="#">Let's Talk</a>
+            <a style="cursor: pointer;" class="taltbtn" id="openContactForm">Let's Talk</a>
 
             <div class="menu-toggle" id="menu-toggle">
                 ☰
@@ -234,7 +283,10 @@
 
         <!-- Map Container -->
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14009.493460968495!2d77.389129!3d28.61857!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceff29a21a0df%3A0x7783361c7f7296b!2sg%2C%2039%2C%20G%20Block%2C%20Sector%2063%2C%20Noida%2C%20Chotpur%2C%20Uttar%20Pradesh%20201309!5e0!3m2!1sen!2sin!4v1754500688102!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14009.493460968495!2d77.389129!3d28.61857!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceff29a21a0df%3A0x7783361c7f7296b!2sg%2C%2039%2C%20G%20Block%2C%20Sector%2063%2C%20Noida%2C%20Chotpur%2C%20Uttar%20Pradesh%20201309!5e0!3m2!1sen!2sin!4v1754500688102!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 
@@ -305,11 +357,136 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <!--========================================
+                    Start Pop Up Form
+    ==========================================-->
+    <div id="contactFormModal" class="modal-overlay">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close-button" id="closeContactForm">&times;</span>
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+            <!-- Left Section - Illustration Only -->
+            <div class="form-left-section">
+                <div class="illustration-placeholder">
+                    <!-- Replace 'https://placehold.co/400x500/a7d9ed/0056b3?text=Your+Image+Here' with your actual image URL -->
+                    <img src="/assets/imgaes/It-solu.png" alt="Contact Us Illustration">
+                </div>
+            </div>
+
+            <!-- Right Section - Form Fields -->
+            <div class="form-right-section">
+                <h2 class="form-title">Get in touch</h2>
+                <p class="subtext">We will catch you as early as we receive the message</p>
+                <form id="contactForm">
+                    <!-- Each input field now in its own div for stacking -->
+                    <div class="form-field-container">
+                        <input type="text" id="name" name="name" placeholder="Enter name" required>
+                    </div>
+                    <div class="form-field-container">
+                        <input type="email" id="email" name="email" placeholder="Enter email" required>
+                    </div>
+                    <div class="form-field-container">
+                        <input type="tel" id="mobile" name="mobile" placeholder="Enter mobile">
+                    </div>
+                    <div class="form-field-container">
+                        <select id="requirement" name="requirement">
+                            <option value="">Select Requirement</option>
+                            <option value="electric_vehicle">Electric Vehicle</option>
+                            <option value="smart_key">Smart Key</option>
+                            <option value="smart_tv">Smart TV</option>
+                            <option value="web_development">Web Development</option>
+                            <option value="mobile_application_development">Mobile Application Development</option>
+                            <option value="ui/ux_design">UI/UX Design</option>
+                            <option value="erp_design">ERP Design</option>
+                            <option value="digital_marketing">Digital Marketing</option>
+                            <option value="e_commerce">E-commerce</option>
+                            <option value="feedback">Feedback</option>
+                        </select>
+                    </div>
+                    <div class="form-field-container">
+                        <textarea id="message" name="message" placeholder="Enter your message" rows="5"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Submit</button>
+                    <p style="display: flex; gap: 10px; justify-content: center; align-items: center;"
+                        class="privacy-message"><svg style="width: 14px; color: #000;"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v3h8z" />
+                        </svg> We hate spam, and we respect your privacy.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal, button, and close elements
+        const openButton = document.getElementById('openContactForm');
+        const modal = document.getElementById('contactFormModal');
+        const closeButton = document.getElementById('closeContactForm');
+        const contactForm = document.getElementById('contactForm');
+
+        // Function to open the modal
+        openButton.onclick = function (event) {
+            event.preventDefault(); // Prevent default link behavior
+            modal.style.display = 'flex'; // Use flex to center the modal content
+        }
+
+        // Function to close the modal when the close button is clicked
+        closeButton.onclick = function () {
+            modal.style.display = 'none';
+        }
+
+        // Function to close the modal when clicking outside the modal content
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Basic form submission handling (for demonstration)
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            console.log('Form Submitted!');
+            const formData = new FormData(contactForm);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            console.log(data);
+
+            // Using a custom message box for success
+            const messageBox = document.createElement('div');
+            messageBox.className = 'custom-message-box';
+            messageBox.innerHTML = `
+                <div class="custom-message-content">
+                    <p>Your form has been successfully sent!</p>
+                    <button class="custom-message-close">OK</button>
+                </div>
+            `;
+            document.body.appendChild(messageBox);
+
+            // Close message box when OK is clicked
+            messageBox.querySelector('.custom-message-close').onclick = function () {
+                document.body.removeChild(messageBox);
+            };
+
+            modal.style.display = 'none'; // Close modal after submission
+            contactForm.reset(); // Clear form fields
+        });
+    </script>
+
+    <!--========================================
+                    End Pop Up Form
+    ==========================================-->
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script> -->
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script> -->
     <link rel="stylesheet" href="./style/style.css">
-    <Script src="/assets/animation/animation.js"></Script>
+    <!-- <Script src="/assets/animation/animation.js"></Script> -->
 
 </body>
 
