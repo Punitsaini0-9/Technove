@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technove</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/contact.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="nav-logo">
+                <img src="./assets/imgaes/logo 1.png" alt="logo" />
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <li class="nav-link-home nav-c-changes"><a href="/index.html">Home</a></li>
+                <li class="nav-link nav-c-changes"><a href="#">About Us</a></li>
+                <li class="nav-link nav-c-changes"><a href="#">Electrical Vehicle</a></li>
+                <li class="nav-link nav-c-changes"><a href="#">Smart Key</a></li>
+                <li class="nav-link nav-c-changes"><a href="#">Smart TV</a></li>
+                <!-- Our Solution with Dropdown -->
+                <li class="nav-link dropdown nav-c-changes">
+                    <a href="#" class="dropdown-toggle ">Our Solution <i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-link"><a href="#" style="color: #000;">Web Development</a></li>
+                        <li class="nav-link"><a href="#" style="color: #000;">Mobile Application Development</a></li>
+                        <li class="nav-link"><a href="#" style="color: #000;">UI/UX Design</a></li>
+                        <li class="nav-link"><a href="#" style="color: #000;">ERP Design</a></li>
+                        <li class="nav-link"><a href="#" style="color: #000;">E-Commerce</a></li>
+                        <li class="nav-link"><a href="#" style="color: #000;">Digital Marketing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-link nav-c-changes"><a href="#">Career</a></li>
+                <li class="nav-link nav-c-changes"><a href="/contact.html">Contact Us</a></li>
+            </ul>
+
+            <a class="taltbtn" href="#">Let's Talk</a>
+
+            <div class="menu-toggle" id="menu-toggle">
+                ☰
+            </div>
+        </nav>
+
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const dropdown = document.querySelector('.dropdown');
+
+            // Toggle menu on click
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent closing when clicking toggle
+                navLinks.classList.toggle('show');
+            });
+
+            // Dropdown toggle (mobile)
+            dropdownToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation(); // Prevent closing when clicking dropdown
+                dropdown.classList.toggle('open');
+            });
+
+            // Close nav if click happens outside
+            document.addEventListener('click', (e) => {
+                const isClickInsideMenu = navLinks.contains(e.target) || menuToggle.contains(e.target);
+
+                if (!isClickInsideMenu) {
+                    navLinks.classList.remove('show');
+                    dropdown.classList.remove('open');
+                }
+            });
+
+            // Scroll navbar style
+            window.addEventListener("scroll", function () {
+                const nav = document.querySelector(".nav");
+                const navLinksScroll = document.querySelectorAll(".nav-c-changes");
+
+                if (window.scrollY > 0) {
+                    nav.classList.add("scrolled");
+                    navLinksScroll.forEach(link => link.classList.add("scrolled"));
+                } else {
+                    nav.classList.remove("scrolled");
+                    navLinksScroll.forEach(link => link.classList.remove("scrolled"));
+                }
+            });
+        </script>
+
+    </header>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            <!-- Left Section: Contact Information -->
+            <div class="contact-info-section">
+                <h2>Contact Us</h2>
+                <p>We're eager to hear from you! Reach out through any of these channels.</p>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 11.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 22s6-5.2 6-10a6 6 0 10-12 0c0 4.8 6 10 6 10z" />
+                        </svg>
+
+                    </div>
+                    <div class="info-details">
+                        <p class="label">Address</p>
+                        <p>G 39, G-block Sector 63, Noida, UP - 201301, India.</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                    </div>
+                    <div class="info-details">
+                        <p class="label">Phone</p>
+                        <p>+91 8929445110</p>
+                        <p>120 463 3605</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div class="info-details">
+                        <p class="label">Email</p>
+                        <p>info@technove.co.in</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </div>
+                    <div class="info-details">
+                        <p class="label">Website</p>
+                        <p>www.technove.co.in</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section: Contact Form -->
+            <div class="contact-form-section">
+                <h2>Get in touch</h2>
+                <p class="subtitle">We will catch you as early as we receive the message</p>
+
+                <form>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Enter name" class="form-input"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Enter email" class="form-input"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="mobile" name="mobile" placeholder="Enter mobile" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <select id="requirement" name="requirement" class="form-select">
+                                <option value="">Select Requirement</option>
+                                <option value="general_inquiry">Services 1</option>
+                                <option value="support">Services 2</option>
+                                <option value="sales">Services 3</option>
+                                <!-- <option value="partnership">Partnership</option>
+                                <option value="other">Other</option> -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Enter your message" class="form-textarea"
+                            required></textarea>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">
+                            I agree to the <a href="#">Terms & Conditions</a> of Business Name.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-button">Submit</button>
+
+                    <p class="privacy-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v3h8z" />
+                        </svg>
+                        We hate spam, and we respect your privacy.
+                    </p>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="location-section-container">
+        <!-- Section Heading -->
+        <h2 class="section-heading">
+            Our Location
+        </h2>
+
+        <!-- Map Container -->
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13407.523038817502!2d77.389129!3d28.61857!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceff29a21a0df%3A0x7783361c7f7296b!2sg%2C%2039%2C%20G%20Block%2C%20Sector%2063%2C%20Noida%2C%20Chotpur%2C%20Uttar%20Pradesh%20201309!5e1!3m2!1sen!2sin!4v1754492080460!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="main-columns">
+                <!-- Column 1: Logo and Tagline -->
+                <div class="column logo-section">
+                    <img src="/assets/imgaes/logo 1.png" alt="Company Logo">
+                    <h2 class="tagline">Empowering Innovation, Driving Digital Success.</h2>
+                    <p class="footer-description">Technove Global Software Pvt. Ltd. believes that innovation is a
+                        journey, not a destination</p>
+                    <p style="color: #FFFFFF;" class="follow"> <img src="/assets/icons/solar_share-linear.png"
+                            alt="">Follow us on -</p>
+                    <div class="social-media">
+                        <a href="#" class="instagram"><img src="/assets/icons/skill-icons_instagram.png" alt=""></a>
+                        <a href="#" class="facebook"><img src="/assets/icons/Vector.png" alt=""></a>
+                        <a href="#" class="youtube"><img src="/assets/icons/logos_youtube-icon.png" alt=""></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: House of Operation -->
+                <div class="column">
+                    <h3 style="width: 300px;"><img src="/assets/icons/location_on.png" alt=""> House of Operation</h3>
+                    <p class="address">
+                        G block Sector 63 Noida,<br>
+                        Uttar Pradesh - 201301, India.
+                    </p>
+                </div>
+
+                <!-- Column 3: Services -->
+                <div class="column">
+                    <h3><img src="/assets/icons/grommet-icons_services.png" alt=""> Services</h3>
+                    <ul class="service-list">
+                        <li><a href="#">Electrical Vehicle <i class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#">Smart Key <i class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#">Smart TV <i class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#">Web Development <i class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#"> Mobile Applecation Development <i class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#">UI/UX Design <i class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#">ERP Design <i class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#">Digital Marketing <i class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#">E-commerce <i class="fa-solid fa-angle-down"></i></a></li>
+
+
+                    </ul>
+                </div>
+
+                <!-- Column 4: Company -->
+                <div class="column">
+                    <h3><img src="/assets/icons/mdi_company.png" alt=""> Company</h3>
+                    <ul class="company-list">
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Customers FAQ's</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms and Condition</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="copyright">&copy; Copyright 2024-2025 Technove.pvt.ltd</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="./style/style.css">
+    <Script src="/assets/animation/animation.js"></Script>
+
+</body>
+
+</html>
