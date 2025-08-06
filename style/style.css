@@ -1081,6 +1081,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    text-align: center;
+    /* optional */
 }
 
 .exp h5 {
@@ -1094,6 +1096,46 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+/* Responsive text for tablets */
+@media (max-width: 768px) {
+
+    .exp h1,
+    .exp h2 {
+        font-size: 2rem;
+        letter-spacing: 5px;
+    }
+
+    .exp h5 {
+        font-size: 1.5rem;
+        letter-spacing: 5px;
+    }
+
+    .exp {
+        font-size: 2rem;
+        letter-spacing: 10px;
+    }
+}
+
+/* Responsive text for mobile */
+@media (max-width: 480px) {
+
+    .exp h1,
+    .exp h2 {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .exp h5 {
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+    }
+
+    .exp {
+        font-size: 1.8rem;
+        letter-spacing: 5px;
+    }
 }
 
 
