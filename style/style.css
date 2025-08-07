@@ -2445,21 +2445,22 @@ body {
     display: flex;
     justify-content: center;
     /* mai: center form inside */
-    max-width: 1000px;
+    max-width: 800px;
     /* mai: max width of modal */
-    max-height: 600px;
+    max-height: 500px;
+    height: auto;
     width: 100%;
     overflow: hidden;
     /* mai: keep inside rounded border */
     position: relative;
     /* mai: for close button positioning */
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 .close-button {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.7rem;
+    right: 0.8rem;
     color: #0D2C54;
     /* mai: button text color */
     font-size: 2rem;
@@ -2468,8 +2469,8 @@ body {
     background-color: rgba(255, 255, 255, 0.7);
     /* mai: button background */
     border-radius: 50%;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2493,7 +2494,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    min-height: 400px;
+    min-height: 300px;
 }
 
 .form-left-section .illustration-placeholder {
@@ -2524,7 +2525,7 @@ body {
 }
 
 .form-right-section h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #1a202c;
     /* mai: heading color */
@@ -2535,7 +2536,7 @@ body {
     color: #6a737b;
     /* mai: subtext color */
     font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.8rem;
 }
 
 .form-field-container {
@@ -2548,15 +2549,15 @@ body {
 .form-right-section select,
 .form-right-section textarea {
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: 0.7rem 1rem;
     border: 1px solid #e2e8f0;
     /* mai: input border color */
     border-radius: 0.5rem;
     background-color: #f7fafc;
     color: #1a202c;
-    font-size: 1rem;
+    font-size: 0.8rem;
     outline: none;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     border: 1px solid #00B8F0;
 }
 
@@ -2604,7 +2605,7 @@ body {
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    margin-top: 1.5rem;
+    margin-top: 0.2rem;
     width: 100%;
 }
 
