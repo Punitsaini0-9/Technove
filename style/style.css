@@ -189,6 +189,7 @@ body {
         text-align: left;
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
+        perspective: 100px;
     }
 
     .nav-links.show {
