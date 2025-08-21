@@ -618,9 +618,6 @@ body {
 
 /* Jobs Section Responsive */
 @media (max-width: 768px) {
-    body {
-        padding: 1rem;
-    }
 
     .jobs-section-container {
         padding: 2rem 1rem;

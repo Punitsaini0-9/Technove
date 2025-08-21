@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technove</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- <link rel="stylesheet" href="./style/contact.css"> -->
+    <link rel="stylesheet" href="./style/career.css">
+    <link rel="stylesheet" href="./style/service.css">
+
+
+
+    <style>
+        /* Custom Message Box Styling (for replacing alert) */
+        .custom-message-box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            /* Higher than modal */
+        }
+
+        .custom-message-content {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            color: #333;
+            max-width: 300px;
+        }
+
+        .custom-message-content p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .custom-message-close {
+            background: linear-gradient(to right, #2575fc 0%, #6a11cb 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .custom-message-close:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="nav-logo">
+                <img src="./assets/imgaes/logo 1.png" alt="logo" />
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <li class="nav-link-home nav-c-changes"><a href="/index.html">Home</a></li>
+                <li class="nav-link nav-c-changes"><a href="/about.html">About Us</a></li>
+                <li class="nav-link nav-c-changes"><a href="#">Electrical Vehicle</a></li>
+                <li class="nav-link nav-c-changes"><a href="#">Smart Key</a></li>
+                <li class="nav-link nav-c-changes"><a href="#">Smart TV</a></li>
+                <!-- Our Solution with Dropdown -->
+                <li class="nav-link dropdown nav-c-changes">
+                    <a href="#" class="dropdown-toggle ">Our Solution <i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-link"><a href="#" style="color: #000;">Web Development</a></li>
+                        <li class="nav-link"><a href="#" style="color: #000;">Mobile Application Development</a></li>
+                        <li class="nav-link"><a href="#" style="color: #000;">UI/UX Design</a></li>
+                        <li class="nav-link"><a href="#" style="color: #000;">ERP Design</a></li>
+                        <li class="nav-link"><a href="#" style="color: #000;">E-Commerce</a></li>
+                        <li class="nav-link"><a href="#" style="color: #000;">Digital Marketing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-link nav-c-changes"><a href="/career.html">Career</a></li>
+                <li class="nav-link nav-c-changes"><a href="/contact.html">Contact Us</a></li>
+            </ul>
+
+            <a style="cursor: pointer;" class="taltbtn" id="openContactForm">Let's Talk</a>
+
+            <div class="menu-toggle" id="menu-toggle">
+                ☰
+            </div>
+        </nav>
+
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const dropdown = document.querySelector('.dropdown');
+
+            // Toggle menu on click
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent closing when clicking toggle
+                navLinks.classList.toggle('show');
+            });
+
+            // Dropdown toggle (mobile)
+            dropdownToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation(); // Prevent closing when clicking dropdown
+                dropdown.classList.toggle('open');
+            });
+
+            // Close nav if click happens outside
+            document.addEventListener('click', (e) => {
+                const isClickInsideMenu = navLinks.contains(e.target) || menuToggle.contains(e.target);
+
+                if (!isClickInsideMenu) {
+                    navLinks.classList.remove('show');
+                    dropdown.classList.remove('open');
+                }
+            });
+
+            // Scroll navbar style
+            window.addEventListener("scroll", function () {
+                const nav = document.querySelector(".nav");
+                const navLinksScroll = document.querySelectorAll(".nav-c-changes");
+
+                if (window.scrollY > 0) {
+                    nav.classList.add("scrolled");
+                    navLinksScroll.forEach(link => link.classList.add("scrolled"));
+                } else {
+                    nav.classList.remove("scrolled");
+                    navLinksScroll.forEach(link => link.classList.remove("scrolled"));
+                }
+            });
+        </script>
+
+    </header>
+
+    <div class="job-openings-banner">
+        <div class="banner-content">
+            <p class="breadcrumbs">Home &bull; Our Solutions &bull; <span>Mobile Application Development</span></p>
+            <h1 class="banner-title">Mobile Application Development</h1>
+        </div>
+    </div>
+
+
+    <section class="career-section">
+        <div class="career-section-container">
+
+            <!-- Right Image Content -->
+            <div class="career-image-content">
+                <img src="http://127.0.0.1:5501/images/Mobile-App-Developemnt-Pictures2.png" alt="Career and Culture">
+            </div>
+            <!-- Left Text Content -->
+            <div class="career-text-content">
+                <h2 style="color: #2575fc; font-size: 1.6rem; text-align: justify;line-height: 1.5">Your Business, Our
+                    Code – Tailored Mobile App Development by Technove Global.</h2>
+                <p>
+                    Empowering Businesses with Scalable & Secure Mobile App Solutions At Technove Global, we specialize
+                    in delivering innovative, secure, and scalable mobile applications tailored for businesses across
+                    diverse industries. As a trusted mobile app development company, our mission is to empower brands
+                    with cutting-edge mobile technologies that enhance user engagement, optimize operations, and foster
+                    sustainable business growth. We align your mobile strategy with your core business objectives,
+                    helping you stay ahead in an ever-evolving digital landscape. From idea to execution, our end-to-end
+                    mobile app development services cover everything — strategy, wireframing, UI/UX design, interactive
+                    prototyping, development, rigorous testing, and successful deployment.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="services-section-container">
+            <p class="services-small-heading">Service</p>
+            <h2 class="services-main-heading">Our Expert Mobile App Development Services</h2>
+            <p class="services-tagline">Technove Global delivers complete mobile app development solutions built on the
+                latest technologies, customized for every industry and business objective.</p>
+
+            <div class="service-cards-grid">
+                <!-- Service Card 1: Website Design -->
+                <div class="service-card" style="border-top: 5px solid #63b3ed;">
+                    <div class="service-icon-placeholder">
+                        <img src="/assets/imgaes/android-app-mobileapp_ic1.svg" alt="Website Design Icon">
+                    </div>
+                    <h3 class="service-title">Android App Development</h3>
+                    <p class="service-description">
+                        Technove Global offers expert Android app development services, crafting high-performance,
+                        user-friendly applications tailored to your business needs. Using the latest tools and
+                        technologies, we build scalable Android solutions that ensure seamless performance across all
+                        devices and user experiences.**
+                    </p>
+                </div>
+
+                <!-- Service Card 2: Web Development -->
+                <div class="service-card" style="border-top: 5px solid #63b3ed;">
+                    <div class="service-icon-placeholder">
+                        <img src="/assets/imgaes/ios-mobileapp_ic2.svg" alt="Web Development Icon">
+                    </div>
+                    <h3 class="service-title">ios App Development</h3>
+                    <p class="service-description">
+                        We create sleek, secure, and high-performing iOS applications tailored for iPhone and iPad
+                        users. Using Swift and the latest frameworks, our apps offer intuitive interfaces, seamless
+                        functionality, and scalability to support business growth across various industries.
+                    </p>
+                </div>
+
+                <!-- Service Card 3: E-commerce Development -->
+                <div class="service-card" style="border-top: 5px solid #63b3ed;">
+                    <div class="service-icon-placeholder">
+                        <img src="/assets/imgaes/react-native-mobileapp_ic3.svg" alt="E-commerce Icon">
+                    </div>
+                    <h3 class="service-title">React Native App Development</h3>
+                    <p class="service-description">
+                        We build cross-platform mobile apps using React Native, ensuring native-like performance and a
+                        consistent user experience on both iOS and Android. Our solutions are fast, cost-effective, and
+                        tailored to meet the unique needs of your business.
+                    </p>
+                </div>
+
+                <!-- Service Card 4: Mobile Applications -->
+                <div class="service-card" style="border-top: 5px solid #63b3ed;">
+                    <div class="service-icon-placeholder">
+                        <img src="/assets/imgaes/react-native-mobileapp_ic4.svg" alt="Mobile App Icon">
+                    </div>
+                    <h3 class="service-title">Flutter App Development</h3>
+                    <p class="service-description">
+                        We build interactive mobile apps to extend
+                        your reach to potential customers &
+                        maximize conversions. Our platform apps
+                        designed for the iPhone, Blackberry,
+                        Android etc.
+                    </p>
+                </div>
+
+                <!-- Service Card 5: Software Development -->
+                <div class="service-card" style="border-top: 5px solid #63b3ed;">
+                    <div class="service-icon-placeholder">
+                        <img src="/assets/imgaes/wearable-mobileapp_ic5.svg" alt="Software Development Icon">
+                    </div>
+                    <h3 class="service-title">Wearable App Development</h3>
+                    <p class="service-description">
+                        We design and develop innovative wearable apps tailored for devices like smartwatches and
+                        fitness trackers. Our solutions offer seamless connectivity, real-time data access, and
+                        intuitive interfaces to enhance user experience and support health, fitness, and enterprise
+                        applications.
+                    </p>
+                </div>
+
+                <!-- Service Card 6: Digital Marketing -->
+                <div class="service-card" style="border-top: 5px solid #63b3ed;">
+                    <div class="service-icon-placeholder">
+                        <img src="/assets/imgaes/pwa-mobileapp_ic6.svg" alt="Digital Marketing Icon">
+                    </div>
+                    <h3 class="service-title">PWA Development</h3>
+                    <p class="service-description">
+                        We create Progressive Web Apps (PWAs) that combine the best of web and mobile experiences. Fast,
+                        reliable, and engaging, our PWAs work seamlessly across devices, offering offline access, push
+                        notifications, and native-like performance to boost user engagement and retention.
+                    </p>
+                </div>
+
+                <!-- Service Card 4: Mobile Applications -->
+                <div class="service-card" style="border-top: 5px solid #63b3ed;">
+                    <div class="service-icon-placeholder">
+                        <img src="/assets/imgaes/mobileapp-maintanence_ic7.svg" alt="Mobile App Icon">
+                    </div>
+                    <h3 class="service-title">Mobile App Maintanence</h3>
+                    <p class="service-description">
+                        We offer comprehensive mobile app maintenance services to ensure your app stays updated, secure,
+                        and fully functional. From bug fixes and performance optimization to feature enhancements and OS
+                        updates, we help maintain a smooth user experience post-launch.
+                    </p>
+                </div>
+
+                <!-- Service Card 5: Software Development -->
+                <div class="service-card" style="border-top: 5px solid #63b3ed;">
+                    <div class="service-icon-placeholder">
+                        <img src="/assets/imgaes/ar-vr-mobileapp_ic8.svg" alt="Software Development Icon">
+                    </div>
+                    <h3 class="service-title">AR/VR Development</h3>
+                    <p class="service-description">
+                        We develop immersive AR/VR applications that enhance user interaction and engagement across
+                        various industries. From virtual product showcases to interactive training simulations, our
+                        solutions leverage the latest technologies to deliver realistic, innovative, and impactful
+                        digital experiences.
+                    </p>
+                </div>
+
+                <!-- Service Card 6: Digital Marketing -->
+                <div class="service-card" style="border-top: 5px solid #63b3ed;">
+                    <div class="service-icon-placeholder">
+                        <img src="/assets/imgaes/startup-app-mobileapp_ic9.svg" alt="Digital Marketing Icon">
+                    </div>
+                    <h3 class="service-title">Startup App Development</h3>
+                    <p class="service-description">
+                        We specialize in startup app development, turning innovative ideas into scalable, market-ready
+                        products. From MVP design to full-scale deployment, we provide end-to-end support, helping
+                        startups build impactful apps that attract users, investors, and drive early-stage growth.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mobile-app-section">
+        <div class="mobile-app-section-container">
+            <h2 class="mobile-app-main-heading">Tailored Mobile Application Development Services for Every Need</h2>
+            <p class="mobile-app-subtext">
+                We craft scalable, intuitive, and high-performance mobile app solutions for startups, enterprises, and
+                internal teams. Whether starting fresh or upgrading existing systems, our Denver-based mobile app
+                experts are here to bring your vision to life.
+            </p>
+
+            <div class="mobile-app-service-cards-grid">
+                <!-- Service Card 1: App Development for Startup - Class name changed to app-feature-card -->
+                <div class="app-feature-card">
+                    <div class="service-icon-placeholder">
+                        <img src="assets/imgaes/startup-app-mobileapp_ic9.svg" alt="Startup Icon">
+                    </div>
+                    <h3 class="service-title">App Development for Startup</h3>
+                    <p class="service-description">
+                        Our enterprise mobile app development services empower large-scale businesses with secure,
+                        robust, and integrated solutions. Enhance
+                        workflow, productivity, and data management with future-ready mobile applications.
+                    </p>
+                </div>
+
+                <!-- Service Card 2: App Development for Enterprise - Class name changed to app-feature-card -->
+                <div class="app-feature-card">
+                    <div class="service-icon-placeholder">
+                        <img src="/assets/imgaes/enterprise-mobileapp_icon2 copy.svg" alt="Enterprise Icon">
+                    </div>
+                    <h3 class="service-title">App Development for Enterprise</h3>
+                    <p class="service-description">
+                        Our enterprise mobile app development services deliver secure, robust, and integrated solutions
+                        for large-scale businesses. Boost productivity,
+                        streamline workflows, and optimize data management with future-ready mobile applications.
+                    </p>
+                </div>
+
+                <!-- Service Card 3: App Development for Business Operation Management - Class name changed to app-feature-card -->
+                <div class="app-feature-card">
+                    <div class="service-icon-placeholder">
+                        <img src="/assets/imgaes/business-management-mobileapp_icon3.svg" alt="Management Icon">
+                    </div>
+                    <h3 class="service-title">App Development for Business Operation Management</h3>
+                    <p class="service-description">
+                        Streamline internal operations with strategic mobile app solutions. From task automation to
+                        advanced reporting tools, we build business apps that
+                        enhance efficiency and enable real-time collaboration.
+                    </p>
+                </div>
+
+                <!-- You can add more cards here following the same structure -->
+            </div>
+        </div>
+    </section>
+
+
+    <section class="app-industries">
+        <div class="app-industries-section">
+            <h2>Industries We Serve with Our <span>Mobile App Expertise</span></h2>
+            <p>We build powerful, scalable, and user-friendly apps for diverse industries worldwide.</p>
+
+            <div class="app-industries-grid">
+                <div class="app-industries-card">
+                    <div class="app-industries-icon">🏥</div>
+                    <h3>Healthcare App Development</h3>
+                    <p>We develop HIPAA-compliant apps for hospitals, clinics, and healthcare startups with secure,
+                        user-friendly solutions.</p>
+                </div>
+
+                <div class="app-industries-card">
+                    <div class="app-industries-icon">📚</div>
+                    <h3>Education App Development</h3>
+                    <p>Smart learning solutions — from e-learning platforms to interactive classrooms that transform
+                        education.</p>
+                </div>
+
+                <div class="app-industries-card">
+                    <div class="app-industries-icon">🍽️</div>
+                    <h3>Restaurant App Development</h3>
+                    <p>Custom restaurant apps with online ordering, reservations, delivery, and customer engagement
+                        features.</p>
+                </div>
+
+                <div class="app-industries-card">
+                    <div class="app-industries-icon">🎬</div>
+                    <h3>Media & Entertainment Apps</h3>
+                    <p>Dynamic streaming apps, video platforms, and digital content solutions with seamless UX.</p>
+                </div>
+
+                <div class="app-industries-card">
+                    <div class="app-industries-icon">💰</div>
+                    <h3>Finance App Development</h3>
+                    <p>Secure fintech apps for banking, digital wallets, and stock trading with advanced encryption.</p>
+                </div>
+
+                <div class="app-industries-card">
+                    <div class="app-industries-icon">⚡</div>
+                    <h3>On-Demand App Development</h3>
+                    <p>Feature-rich apps for services like food delivery, ride-hailing, and home services with real-time
+                        tracking.</p>
+                </div>
+
+                <div class="app-industries-card">
+                    <div class="app-industries-icon">✈️</div>
+                    <h3>Travel App Development</h3>
+                    <p>Next-gen apps for travel bookings, trip planning, hotel reservations, and ticketing platforms.
+                    </p>
+                </div>
+
+                <div class="app-industries-card">
+                    <div class="app-industries-icon">🎉</div>
+                    <h3>Event App Development</h3>
+                    <p>Engaging apps for event management, ticket booking, networking, and live interactions.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+     <section class="app-tech-section">
+        <h2>Innovating Mobile Apps with <span style="color:#2563eb;">Next-Gen Technologies</span></h2>
+        <p>
+            We leverage cutting-edge technologies to build intelligent, scalable, and secure mobile apps that drive
+            digital transformation across industries.
+        </p>
+
+        <div class="app-tech-grid">
+            <div class="app-tech-card">
+                <div class="app-tech-icon">🤖</div>
+                <h3>Artificial Intelligence</h3>
+                <p>Enhancing apps with smart features like personalization, voice recognition, predictive analytics, and
+                    intelligent automation.</p>
+            </div>
+
+            <div class="app-tech-card">
+                <div class="app-tech-icon">📡</div>
+                <h3>Internet of Things</h3>
+                <p>Developing IoT-enabled apps for seamless device connectivity, real-time monitoring, automation, and
+                    data-driven insights.</p>
+            </div>
+
+            <div class="app-tech-card">
+                <div class="app-tech-icon">🌐</div>
+                <h3>Metaverse</h3>
+                <p>Building immersive experiences with AR/VR, 3D interactions, and digital ecosystems bridging physical
+                    and virtual worlds.</p>
+            </div>
+
+            <div class="app-tech-card">
+                <div class="app-tech-icon">☁️</div>
+                <h3>Cloud</h3>
+                <p>Creating scalable, secure, and high-performance cloud-powered apps with real-time data access and
+                    seamless integration.</p>
+            </div>
+
+            <div class="app-tech-card">
+                <div class="app-tech-icon">🔗</div>
+                <h3>Blockchain</h3>
+                <p>Integrating blockchain for secure transactions, decentralized applications, supply chain, and fintech
+                    innovations.</p>
+            </div>
+
+            <div class="app-tech-card">
+                <div class="app-tech-icon">🕶️</div>
+                <h3>AR / VR</h3>
+                <p>Delivering next-gen AR/VR solutions for retail, gaming, training, and interactive experiences on
+                    mobile platforms.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="main-columns">
+                <!-- Column 1: Logo and Tagline -->
+                <div class="column logo-section">
+                    <img src="/assets/imgaes/logo 1.png" alt="Company Logo">
+                    <h2 class="tagline">Empowering Innovation, Driving Digital Success.</h2>
+                    <p class="footer-description">Technove Global Software Pvt. Ltd. believes that innovation is a
+                        journey, not a destination</p>
+                    <p style="color: #FFFFFF;" class="follow"> <img src="/assets/icons/solar_share-linear.png"
+                            alt="">Follow us on -</p>
+                    <div class="social-media">
+                        <a href="#" class="instagram"><img src="/assets/icons/skill-icons_instagram.png" alt=""></a>
+                        <a href="#" class="facebook"><img src="/assets/icons/Vector.png" alt=""></a>
+                        <a style="width: 120px;" href="#" class="youtube"><img style="scale: 1.2;"
+                                src="/assets/icons/icons8-linkedin-48.png" alt=""></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: House of Operation -->
+                <div class="column">
+                    <h3 style="width: 300px;"><img src="/assets/icons/location_on.png" alt=""> House of Operation</h3>
+                    <p class="address">
+                        G block Sector 63 Noida,<br>
+                        Uttar Pradesh - 201301, India.
+                    </p>
+                </div>
+
+                <!-- Column 3: Services -->
+                <div class="column">
+                    <h3><img src="/assets/icons/grommet-icons_services.png" alt=""> Services</h3>
+                    <ul class="service-list">
+                        <li><a href="#">Electrical Vehicle <i class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#">Smart Key <i class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#">Smart TV <i class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#">Web Development <i class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#"> Mobile Applecation Development <i class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#">UI/UX Design <i class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#">ERP Design <i class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#">Digital Marketing <i class="fa-solid fa-angle-down"></i></a></li>
+                        <li><a href="#">E-commerce <i class="fa-solid fa-angle-down"></i></a></li>
+
+
+                    </ul>
+                </div>
+
+                <!-- Column 4: Company -->
+                <div class="column">
+                    <h3><img src="/assets/icons/mdi_company.png" alt=""> Company</h3>
+                    <ul class="company-list">
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Customers FAQ's</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms and Condition</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="copyright">&copy; Copyright 2024-<span id="year"></span> Technove.pvt.ltd</p>
+            <script>
+                document.getElementById("year").textContent = new Date().getFullYear();
+            </script>
+
+        </div>
+    </footer>
+
+    <!--========================================
+                    Start Pop Up Form
+    ==========================================-->
+    <div id="contactFormModal" class="modal-overlay" style="display: none;">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close-button" id="closeContactForm">&times;</span>
+
+            <!-- Left Section - Illustration Only -->
+            <div class="form-left-section">
+                <div class="illustration-placeholder">
+                    <!-- Replace 'https://placehold.co/400x500/a7d9ed/0056b3?text=Your+Image+Here' with your actual image URL -->
+                    <img src="/assets/imgaes/It-solu.png" alt="Contact Us Illustration">
+                </div>
+            </div>
+
+            <!-- Right Section - Form Fields -->
+            <div class="form-right-section">
+                <h2 class="form-title">Inquiry Form</h2>
+                <p class="subtext">We will catch you as early as we receive the message</p>
+                <form id="contactForm">
+                    <!-- Each input field now in its own div for stacking -->
+                    <div class="form-field-container">
+                        <input type="text" id="name" name="name" placeholder="Enter name" required>
+                    </div>
+                    <div class="form-field-container">
+                        <input type="email" id="email" name="email" placeholder="Enter email" required>
+                    </div>
+                    <div class="form-field-container">
+                        <input type="tel" id="mobile" name="mobile" placeholder="Enter mobile">
+                    </div>
+                    <div class="form-field-container">
+                        <select id="requirement" name="requirement">
+                            <option value="">Select Requirement</option>
+                            <option value="electric_vehicle">Electric Vehicle</option>
+                            <option value="smart_key">Smart Key</option>
+                            <option value="smart_tv">Smart TV</option>
+                            <option value="web_development">Web Development</option>
+                            <option value="mobile_application_development">Mobile Application Development</option>
+                            <option value="ui/ux_design">UI/UX Design</option>
+                            <option value="erp_design">ERP Design</option>
+                            <option value="digital_marketing">Digital Marketing</option>
+                            <option value="e_commerce">E-commerce</option>
+                            <option value="feedback">Feedback</option>
+                        </select>
+                    </div>
+                    <div class="form-field-container">
+                        <textarea id="message" name="message" placeholder="Enter your message" rows="5"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Submit</button>
+                    <p style="display: flex; gap: 10px; justify-content: center; align-items: center;"
+                        class="privacy-message"><svg style="width: 14px; color: #000;"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v3h8z" />
+                        </svg> We hate spam, and we respect your privacy.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const openButton = document.getElementById('openContactForm');
+        const modal = document.getElementById('contactFormModal');
+        const closeButton = document.getElementById('closeContactForm');
+        const contactForm = document.getElementById('contactForm');
+
+        // Show modal
+        function openModal() {
+            modal.style.display = 'flex';
+        }
+
+        // Close modal
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // // Detect and store first visit using localStorage
+        // const isFirstVisit = localStorage.getItem('firstVisitDone') === null;
+
+        // if (isFirstVisit) {
+        //     openModal(); // Show immediately
+        //     localStorage.setItem('firstVisitDone', 'true'); // Mark as visited
+        // } else {
+        //     // Show after 3 seconds for returning visitors
+        //     window.addEventListener('DOMContentLoaded', () => {
+        //         setTimeout(() => {
+        //             openModal();
+        //         }, 5000);
+        //     });
+        // }
+
+        // Open button manually
+        openButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+        });
+
+        // Close button
+        closeButton.addEventListener('click', closeModal);
+
+        // Click outside modal closes it
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Submit handler
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(contactForm);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+
+            const messageBox = document.createElement('div');
+            messageBox.className = 'custom-message-box';
+            messageBox.innerHTML = `
+            <div class="custom-message-content" style="background:white; padding:20px; border:1px solid #ccc;">
+                <p>Your form has been successfully sent!</p>
+                <button class="custom-message-close">OK</button>
+            </div>
+        `;
+            document.body.appendChild(messageBox);
+
+            messageBox.querySelector('.custom-message-close').onclick = function () {
+                document.body.removeChild(messageBox);
+            };
+
+            closeModal();
+            contactForm.reset();
+        });
+    </script>
+
+    <!--========================================
+                    End Pop Up Form
+    ==========================================-->
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script> -->
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script> -->
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- <Script src="/assets/animation/animation.js"></Script> -->
+
+</body>
+
+</html>

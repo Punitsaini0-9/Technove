@@ -1,0 +1,546 @@
+ /* Base Body Styling */
+ body {
+     font-family: 'Inter', sans-serif;
+
+ }
+
+ .services-section {
+     background: linear-gradient(to bottom right, #e0f2f7, #c0e0f0);
+     /* Light gray background 
+     /* Add some padding around the section */
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     align-items: center;
+     min-height: 100vh;
+     box-sizing: border-box;
+ }
+
+ /* Main Section Container */
+ .services-section-container {
+     max-width: 1200px;
+     /* Max width similar to the example */
+     width: 100%;
+     padding: 3rem 1rem;
+     /* Generous padding */
+     text-align: center;
+     /* Center align headings */
+     box-sizing: border-box;
+ }
+
+ /* Top Small Heading "SERVICE" */
+ .services-small-heading {
+     font-size: 0.9rem;
+     font-weight: 700;
+     color: #8e44ad;
+     /* Purple color from image */
+     text-transform: uppercase;
+     margin-bottom: 0.5rem;
+     letter-spacing: 0.05em;
+ }
+
+ /* Main Section Heading "Our Services" */
+ .services-main-heading {
+     font-size: 2.8rem;
+     /* Large heading */
+     font-weight: 800;
+     /* Extra bold */
+     color: #1a202c;
+     /* Dark text color */
+     margin-bottom: 1rem;
+     line-height: 1.2;
+ }
+
+ /* Subtext/Tagline "BRINGING YOUR IDEAS TO LIFE. WE ARE HERE TO HELP" */
+ .services-tagline {
+     font-size: 1rem;
+     line-height: 1.6;
+     color: #6a737b;
+     /* Muted gray text color */
+     margin-bottom: 3rem;
+     /* Space before cards grid */
+     text-transform: uppercase;
+     font-weight: 600;
+     letter-spacing: 0.03em;
+ }
+
+ /* Service Cards Grid */
+ .service-cards-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     /* Responsive grid with min width */
+     gap: 1.5rem;
+     /* Gap between cards */
+     justify-content: center;
+     /* Center cards in the grid */
+ }
+
+ /* Individual Service Card */
+ .service-card {
+     background-color: #ffffff;
+     border-radius: 1rem;
+     /* Rounded corners for cards */
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+     /* Soft shadow */
+     padding: 2rem;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     /* Center content horizontally */
+     text-align: center;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     border-top: 10px solid transparent;
+     /* Placeholder for the border color */
+     padding-top: calc(2rem - 5px);
+     /* Adjust padding to keep content aligned after border */
+ }
+
+
+ .service-card:hover {
+     transform: translateY(-5px);
+     /* Lift effect on hover */
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+ }
+
+ /* Icon Placeholder */
+ .service-icon-placeholder {
+     width: 70px;
+     height: 70px;
+     background: linear-gradient(to right, #e0f2f7, #c0e0f0);
+     /* Light blue gradient background from previous designs */
+     border-radius: 50%;
+     /* Circular shape */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-bottom: 1.5rem;
+     /* Space below icon */
+     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+     /* Subtle shadow for the icon circle */
+ }
+
+ .service-icon-placeholder img {
+     width: 70%;
+     /* Size of image inside circle */
+     height: 70%;
+     object-fit: contain;
+     /* Ensure the whole image is visible */
+ }
+
+ /* Service Title */
+ .service-title {
+     font-size: 1.3rem;
+     font-weight: 700;
+     color: #1a202c;
+     margin-bottom: 0.75rem;
+     line-height: 1.3;
+ }
+
+ /* Service Description */
+ .service-description {
+     font-size: 0.95rem;
+     line-height: 1.6;
+     color: #4a5568;
+     margin-bottom: 0;
+ }
+
+ /* Responsive Adjustments */
+ @media (max-width: 768px) {
+
+     .services-section-container {
+         padding: 2rem 1rem;
+         border-radius: 1rem;
+     }
+
+     .services-main-heading {
+         font-size: 2rem;
+         margin-bottom: 0.75rem;
+     }
+
+     .services-tagline {
+         font-size: 0.85rem;
+         margin-bottom: 2rem;
+     }
+
+     .service-cards-grid {
+         grid-template-columns: 1fr;
+         /* Stack cards on mobile */
+     }
+
+     .service-card {
+         padding: 1.5rem;
+         padding-top: calc(1.5rem - 5px);
+         /* Adjust padding for border */
+     }
+
+     .service-icon-placeholder {
+         width: 60px;
+         height: 60px;
+         margin-bottom: 1rem;
+     }
+
+     .service-title {
+         font-size: 1.2rem;
+     }
+
+     .service-description {
+         font-size: 0.9rem;
+     }
+ }
+
+
+ /* Base Body Styling */
+ .mobile-app-section {
+     font-family: 'Inter', sans-serif;
+     background-color: #f0f2f5;
+     /* Light gray background */
+     margin: 0;
+     padding: 2rem;
+     /* Add some padding around the section */
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     align-items: center;
+     min-height: 100vh;
+     box-sizing: border-box;
+ }
+
+ /* Main Section Container */
+ .mobile-app-section-container {
+     max-width: 1200px;
+     /* Max width similar to the example */
+     width: 100%;
+     padding: 3rem 1rem;
+     /* Generous padding */
+     text-align: center;
+     /* Center align headings */
+     box-sizing: border-box;
+     background-color: #ffffff;
+     /* White background for the section area */
+     border-radius: 1.5rem;
+     /* Rounded corners for the entire section */
+     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+     /* Soft shadow */
+ }
+
+ /* Main Section Heading */
+ .mobile-app-main-heading {
+     font-size: 2.8rem;
+     /* Large heading */
+     font-weight: 800;
+     /* Extra bold */
+     color: #1a202c;
+     /* Dark text color */
+     margin-bottom: 1rem;
+     line-height: 1.2;
+ }
+
+ /* Subtext/Description */
+ .mobile-app-subtext {
+     font-size: 1rem;
+     line-height: 1.6;
+     color: #6a737b;
+     /* Muted gray text color */
+     margin-bottom: 3rem;
+     /* Space before cards grid */
+     max-width: 800px;
+     /* Constrain width of subtext */
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ /* Service Cards Grid - Adjusted to one column */
+ .mobile-app-service-cards-grid {
+     display: grid;
+     grid-template-columns: 1fr;
+     /* One column regardless of screen size */
+     gap: 1.5rem;
+     /* Gap between cards */
+     justify-content: center;
+     /* Center cards in the grid */
+ }
+
+ /* Individual Service Card - Class name changed to app-feature-card */
+ .app-feature-card {
+     background-color: #ffffff;
+     border-radius: 1rem;
+     /* Rounded corners for cards */
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+     /* Soft shadow */
+     padding: 2rem;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     /* Align content to the left */
+     text-align: left;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     border-top: 5px solid transparent;
+     /* Placeholder for the border color */
+     padding-top: calc(2rem - 5px);
+     /* Adjust padding to keep content aligned after border */
+ }
+
+ /* Border top colors for cards - Updated to new class name */
+ .app-feature-card:nth-child(1) {
+     border-top-color: #f6ad55;
+ }
+
+ /* Orange/Pinkish */
+ .app-feature-card:nth-child(2) {
+     border-top-color: #805ad5;
+ }
+
+ /* Purple */
+ .app-feature-card:nth-child(3) {
+     border-top-color: #ed64a6;
+ }
+
+ /* Pink */
+ /* Add more as needed for more cards */
+
+
+ .app-feature-card:hover {
+     transform: translateY(-5px);
+     /* Lift effect on hover */
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+ }
+
+ /* Icon Placeholder - Updated for new card class */
+ .app-feature-card .service-icon-placeholder {
+     width: 70px;
+     height: 70px;
+     background: linear-gradient(to right, #fefcbf, #fbd38d);
+     /* Light yellow/orange gradient as seen in image */
+     border-radius: 50%;
+     /* Circular shape */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-bottom: 1.5rem;
+     /* Space below icon */
+     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+     /* Subtle shadow for the icon circle */
+ }
+
+ /* Specific gradient for app dev for startup - Updated for new card class */
+ .app-feature-card:nth-child(1) .service-icon-placeholder {
+     background: linear-gradient(to right, #fefcbf, #fbd38d);
+ }
+
+ /* Specific gradient for app dev for enterprise - Updated for new card class */
+ .app-feature-card:nth-child(2) .service-icon-placeholder {
+     background: linear-gradient(to right, #e9d8fd, #c1a8e9);
+ }
+
+ /* Specific gradient for business operation management - Updated for new card class */
+ .app-feature-card:nth-child(3) .service-icon-placeholder {
+     background: linear-gradient(to right, #fbcfe8, #fda4af);
+ }
+
+
+ .service-icon-placeholder img {
+     width: 70%;
+     /* Size of image inside circle */
+     height: 70%;
+     object-fit: contain;
+     /* Ensure the whole image is visible */
+ }
+
+ /* Service Title - Updated for new card class */
+ .app-feature-card .service-title {
+     font-size: 1.3rem;
+     font-weight: 700;
+     color: #1a202c;
+     margin-bottom: 0.75rem;
+     line-height: 1.3;
+ }
+
+ /* Service Description - Updated for new card class */
+ .app-feature-card .service-description {
+     font-size: 0.95rem;
+     line-height: 1.6;
+     color: #4a5568;
+     margin-bottom: 0;
+ }
+
+ /* Responsive Adjustments (Simplified as grid is always 1fr) - Updated for new class names */
+ @media (max-width: 768px) {
+
+     .mobile-app-section-container {
+         padding: 2rem 1rem;
+         border-radius: 1rem;
+     }
+
+     .mobile-app-main-heading {
+         font-size: 2rem;
+         margin-bottom: 0.75rem;
+     }
+
+     .mobile-app-subtext {
+         font-size: 0.85rem;
+         margin-bottom: 2rem;
+     }
+
+     /* .service-cards-grid no longer needs specific mobile column setting as it's always 1fr */
+     .app-feature-card {
+         padding: 1.5rem;
+         padding-top: calc(1.5rem - 5px);
+         /* Adjust padding for border */
+     }
+
+     .app-feature-card .service-icon-placeholder {
+         width: 60px;
+         height: 60px;
+         margin-bottom: 1rem;
+     }
+
+     .app-feature-card .service-title {
+         font-size: 1.2rem;
+     }
+
+     .app-feature-card .service-description {
+         font-size: 0.9rem;
+     }
+ }
+
+ .app-industries {
+     background: linear-gradient(to bottom, #111827, #1f2937);
+     color: white;
+ }
+
+ .app-industries-section {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 60px 20px;
+     text-align: center;
+ }
+
+ .app-industries-section h2 {
+     font-size: 32px;
+     font-weight: bold;
+     margin-bottom: 10px;
+ }
+
+ .app-industries-section h2 span {
+     color: #60a5fa;
+ }
+
+ .app-industries-section p {
+     color: #9ca3af;
+     margin-bottom: 40px;
+     font-size: 16px;
+ }
+
+ .app-industries-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     gap: 20px;
+ }
+
+ .app-industries-card {
+     background: #1f2937;
+     border: 1px solid #374151;
+     border-radius: 15px;
+     padding: 25px;
+     text-align: left;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ .app-industries-card:hover {
+     transform: scale(1.05);
+     box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+ }
+
+ .app-industries-icon {
+     font-size: 40px;
+     margin-bottom: 15px;
+ }
+
+ .app-industries-card h3 {
+     font-size: 18px;
+     margin-bottom: 10px;
+     font-weight: bold;
+     color: #ffffff;
+ }
+
+ .app-industries-card p {
+     color: #d1d5db;
+     font-size: 14px;
+     line-height: 1.5;
+ }
+
+ .app-tech-section {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 60px 20px;
+     text-align: center;
+ }
+
+ .app-tech-section h2 {
+     font-size: 34px;
+     font-weight: 700;
+     color: #1f2937;
+     margin-bottom: 10px;
+ }
+
+ .app-tech-section p {
+     font-size: 16px;
+     color: #6b7280;
+     max-width: 800px;
+     margin: 0 auto 50px;
+ }
+
+ .app-tech-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     /* Always 2 cards per row */
+     gap: 25px;
+ }
+
+ .app-tech-card {
+     background: #ffffff;
+     border-radius: 20px;
+     padding: 30px 25px;
+     text-align: left;
+     transition: all 0.3s ease;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+     border: 1px solid #e5e7eb;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .app-tech-card:hover {
+     transform: translateY(-8px);
+     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+ }
+
+ .app-tech-icon {
+     width: 60px;
+     height: 60px;
+     background: linear-gradient(135deg, #60a5fa, #2563eb);
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 28px;
+     color: white;
+     margin-bottom: 20px;
+ }
+
+ .app-tech-card h3 {
+     font-size: 20px;
+     margin-bottom: 10px;
+     color: #1f2937;
+ }
+
+ .app-tech-card p {
+     font-size: 15px;
+     color: #4b5563;
+     line-height: 1.6;
+ }
+
+ @media (max-width: 768px) {
+     .app-tech-grid {
+         grid-template-columns: 1fr;
+     }
+ }
